@@ -1,1 +1,44 @@
-<p>login works!</p>
+<!DOCTYPE html>   
+<html>   
+<head>   
+<title> Login Page </title>  
+<style>
+    label{
+        font-family:verdana;
+        font-size:20px;
+        font-weight: bold;
+    }
+    button{
+        font-family:verdana;
+        font-size:18px;
+        font-weight: bold;
+    }
+    .FooterSection{
+        font-family:verdana;
+        font-size:14px;
+        font-weight: bold;
+    }
+    body{
+        text-align: center;
+    }
+    form{
+        display: inline-block;
+    }
+</style>  
+</head>    
+<body>    
+    <h1 style="font-family:verdana"> Login to your Account </h1><br><br><br><br>  
+    <form>   
+        <label>User ID : </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+        <input type="text" placeholder="Enter User ID" name="userid" required><br><br>  
+        <label>Password : </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="password" placeholder="Enter Password" name="password" required><br><br><br>
+        <button type="submit">Login</button><br><br><br>
+        <div class="FooterSection">
+        First Time User? <a href="#">Register</a><br><br>
+        Forgot <a href="#">User ID?</a><br><br>
+        Forgot <a href="#">Passowrd?</a><br><br>
+        </div>  
+    </form>     
+</body>     
+</html>  
