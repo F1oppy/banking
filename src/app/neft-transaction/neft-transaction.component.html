@@ -1,1 +1,44 @@
-<p>neft-transaction works!</p>
+<!DOCTYPE html>
+<html>
+<body>
+    <link rel="stylesheet" href="neft-transaction.component.css">
+<h2 class="Heading">Initiate NEFT Payment</h2>
+<div class="container">
+<form action="_blank" >
+    <div class="margin">
+  <label for="number">From Account&nbsp;&emsp;&emsp;&ensp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&ensp;</label>
+  <input type="number" id="senderAcc" name="senderAcc"><br><br>
+
+  <label for="number">To Account&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&ensp;</label>
+  <input type="number" id="receiverAcc" name="receiverAcc">
+  &emsp;<input type="submit" value="Add New +"><br><br>
+
+  <label for="number">Amount&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&ensp;</label>
+  <input type="number" id="amount" name="amount"><br><br>
+
+  <label for="date">Transaction Date&emsp;&emsp;&emsp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&ensp;</label>
+  <input type="date" id="date" name="date"><br><br>
+
+  <label for="remarks">Remarks &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&ensp;</label>
+  <input type="text" id="remarks" name="remarks"><br><br><br><br><br><br>
+  </div>
+
+<div class="para">
+    Please note:
+  <ol>
+    <li>Transaction will be executed on the next working day if they are scheduled for Sundays, National Holidays, NEFT Holidays (as declared by RBI).</li><br>
+    <li>Timings for NEFT : Monday-Saturday(except 2nd and 4th Saturday) 6:00 AM - 6:30 PM.</li>
+    </ol>
+</div>
+
+  <input type="submit" value="Save">&emsp;
+  <input type="submit" value="Reset">&emsp;
+  <input type="submit" value="Save as Template">
+
+  <div class="button">
+    <input type="submit" value="Continue">
+  </div>
+</form>
+</div>
+</body>
+</html>
