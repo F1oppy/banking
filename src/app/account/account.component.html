@@ -1,1 +1,113 @@
-<p>account works!</p>
+<html>
+    <head>
+        <style> 
+            table, th, td,div {
+          border: 1px solid black;
+          border-collapse: collapse;
+          
+          padding: 10px;
+        }
+        
+        table.center {
+          margin-left: 40%; 
+          margin-right: auto;
+        }
+        
+        table.left {
+          margin-left: 35%; 
+          margin-right: 77%;
+        }
+        
+        .column {
+          float: left;
+          width: 14%;
+          padding: 10px;
+          height: 300px;
+        }
+
+        p.right {
+          margin-left: 40%; 
+          margin-right: auto;
+ 
+        }
+
+        input.right {
+          margin-left: 25%; 
+          margin-right: auto;
+ 
+        }
+
+        table.right {
+          margin-left: 5%; 
+          margin-right: 5%;
+        }
+       
+
+        
+        </style></style>
+        </head>
+        <body>
+            <table class="center">
+                <tr >
+                    <th>Account Statement</th>
+                </tr>
+            </table>
+            <br>
+            <table class="left">       
+                <div class="column">
+                    <p><b>Account Details</b></p>
+                    <p><b>Summary</b></p>
+                    <p><b>Funds Transfer</b></p>
+                    <p><b>Account Statement</b></p>
+                </div>
+            <link rel="stylesheet" href="account.component.css">
+            <h1 style="text-align:centre;">
+                
+                
+                
+                </div>
+
+            </h1>
+            <form ><p class="right">Statement From &emsp; <input type="date" id="date" values="">&emsp;  to &emsp; <input type="date" id="date" values="">
+                <table class="right" width="900" height="69"  border="1">
+                    <tr >
+                        <th>Select</th>
+                        <th>Account Number</th>
+                        <th>Name</th>
+                        <th>Account Type</th>
+                        <th>Balance</th>
+                    </tr>
+                    <tr>
+                        <td> 
+                           <select>
+                                <option value="none" Selected>Gender</option>
+                                <option value="male" Selected>Male</option>
+                                <option value="female" Selected>Female</option>
+                                <option value="other" Selected>other</option>
+                                </select>
+
+                            
+                        </td>
+                        <td> <input type="number" id="number" values=""></td>
+                        <td> <input type="name" id="name" values=""></td>
+                        
+                            <td> <select>
+                                <option>select an account type</option>
+                                <option>Checking</option>
+                                <option>Current Account</option>
+                                <option>Giro Account</option>
+                                <option>Regular</option>
+                                <option>Salary Account</option>
+                                <option>Saving</option>
+                            </select>
+                        </td>
+
+                        <td> <input type="balance" id="balance" values=""></td>
+                    </tr>
+                   
+                </table>
+                <br>
+                <input class="right" type="submit" value="Submit">
+            </form>
+        </body>
+</html>

@@ -1,1 +1,56 @@
-<p>dashboard works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table, th, td,div {
+  border: 1px solid black;
+  border-collapse: collapse;
+
+  padding: 10px;
+}
+
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+table.left {
+  margin-left: 23%; 
+  margin-right: auto;
+}
+
+.column {
+  float: left;
+  width: 15%;
+  padding: 10px;
+  height: 300px;
+}
+</style>
+<body>
+    <table class="center">
+        <tr >
+            <th>Dashboard</th>
+        </tr>
+    </table>
+    <br>
+    <table class="left">       
+        <div class="column">
+            <p><b>Account Details</b></p>
+            <p><b>Summary</b></p>
+            <p><b>Funds Transfer</b></p>
+            <p><b>Account Statement</b></p>
+        </div>
+        <tr>
+          <th>Account Statement   <i style='font-size:24px' class='fas fa-arrow-down'>&#xf063;</i></th>
+          <th>Funds Transfer   <i style='font-size:24px' class='fas fa-arrow-down'>&#xf063;</i></th>
+          <th>User Profile   <i style='font-size:24px' class='fas fa-arrow-down'>&#xf063;</i></th>
+          <th>Change UserID PasswordS   <i style='font-size:24px' class='fas fa-arrow-down'>&#xf063;</i></th>
+        </tr>
+    </table>
+</body>
+</html>
