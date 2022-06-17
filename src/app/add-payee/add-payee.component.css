@@ -3,21 +3,15 @@ h2{
     border-style: solid;
     margin-left: 700px;
     margin-right: 700px;
+    margin-top: 200px;
 }
 .container{
+    margin-top: 50px;
     text-align: justify;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
-.inpLef{
-    float: left;
-    clear: both;
-}
-.inpCen{
-    float: centre;
-    clear: both;
-}
-.inpRig{
-    float: right;
-    clear: both;
+.button{
+    text-align: center;
 }
