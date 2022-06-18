@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-imps-transaction',
@@ -14,9 +14,9 @@ export class IMPSTransactionComponent implements OnInit {
   }
 
   impsTransaction= new FormGroup({
-    sender: new FormControl(""),
-    receiver: new FormControl(""),
-    amount: new FormControl(""),
+    sender: new FormControl("",[Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(10)]),
+    receiver: new FormControl("",[Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(10)]),
+    amount: new FormControl("",[Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(10)]),
     date: new FormControl(""),
     instructions: new FormControl(""),
     remarks: new FormControl(""),
@@ -24,5 +24,24 @@ export class IMPSTransactionComponent implements OnInit {
 
   impsSubmitted(){
     console.log(this.impsTransaction.value);
+  }
+
+  get sender(): FormControl{
+    return this.impsTransaction.get("sender") as FormControl;
+  }
+  get receiver(): FormControl{
+    return this.impsTransaction.get("receiver") as FormControl;
+  }
+  get amount(): FormControl{
+    return this.impsTransaction.get("amount") as FormControl;
+  }
+  get date(): FormControl{
+    return this.impsTransaction.get("date") as FormControl;
+  }
+  get instructions(): FormControl{
+    return this.impsTransaction.get("instructions") as FormControl;
+  }
+  get remarks(): FormControl{
+    return this.impsTransaction.get("remarks") as FormControl;
   }
 }

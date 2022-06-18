@@ -13,7 +13,14 @@
       <label for="sender" class="form-label">From Account -</label><br><br>
     </div>
     <div class="col">
-      <input type="number" id="sender" formControlName="sender"><br><br>
+      <input type="text" id="sender" formControlName="sender">
+      <div class="form-text text-danger" *ngIf="sender.errors?.['required']&& (sender.touched || sender.dirty)">
+        Name is Required
+      </div>
+      <div class="form-text text-danger" *ngIf="sender.errors?.['pattern']&& (sender.touched || sender.dirty)">
+      Name should start with Alphabet
+      </div>
+      <br><br>
     </div>
   </div>
 
@@ -22,7 +29,14 @@
         <label for="receiver" class="form-label">To Account -</label><br><br>
       </div>
       <div class="col mb-3">
-        <input type="number" id="receiver" formControlName="receiver"><br><br>
+        <input type="text" id="receiver" formControlName="receiver">
+        <div class="form-text text-danger" *ngIf="receiver.errors?.['required']&& (receiver.touched || sender.dirty)">
+          Name is Required
+        </div>
+        <div class="form-text text-danger" *ngIf="receiver.errors?.['pattern']&& (receiver.touched || sender.dirty)">
+        Name should start with Alphabet
+        </div>
+        <br><br>
       </div>
       <div class="col btn-lg float-end">
         <input class="btn btn-primary " type="submit" value="Add New +">
@@ -35,7 +49,14 @@
         <label for="amount" class="form-label">Amount -</label><br>
       </div>
       <div class="col mb-3">
-        <input type="number" id="amount" formControlName="amount"><br><br>
+        <input type="number" id="amount" formControlName="amount">
+        <div class="form-text text-danger" *ngIf="amount.errors?.['required']&& amount.touched">
+          Valid Amount is Required
+        </div>
+        <div class="form-text text-danger" *ngIf="amount.errors?.['pattern']&& (amount.touched || sender.dirty)">
+          Number is Required
+        </div>
+        <br><br>
       </div>
     </div>
 
