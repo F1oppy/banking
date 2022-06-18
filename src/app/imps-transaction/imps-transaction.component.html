@@ -49,7 +49,7 @@
         <label for="amount" class="form-label">Amount -</label><br>
       </div>
       <div class="col mb-3">
-        <input type="number" id="amount" formControlName="amount">
+        <input type="text" id="amount" formControlName="amount">
         <div class="form-text text-danger" *ngIf="amount.errors?.['required']&& amount.touched">
           Valid Amount is Required
         </div>
