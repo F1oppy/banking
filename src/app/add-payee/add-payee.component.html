@@ -13,7 +13,7 @@
       <label for="name" class="form-label">Beneficiary Name -</label><br><br>
     </div>
     <div class="col">
-      <input type="text" id="name" formControlName="name"><br><br>
+      <input type="text" id="name" formControlName="name">
       <div class="form-text text-danger" *ngIf="name.errors?.['required']&& (name.touched || name.dirty)">
         Name is Required
       </div>
