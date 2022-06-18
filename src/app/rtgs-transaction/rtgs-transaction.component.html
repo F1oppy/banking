@@ -1,38 +1,81 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <link rel="stylesheet" href="rtgs-transaction.component.css">
-<h2 class="Heading">Initiate RTGS Payment</h2>
-<div class="container">
-<form action="_blank" >
-
-  <label for="number">From Account&nbsp;&emsp;&emsp;&ensp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&ensp;</label>
-  <input type="number" id="senderAcc" name="senderAcc"><br><br>
-
-  <label for="number">To Account&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&ensp;</label>
-  <input type="number" id="receiverAcc" name="receiverAcc">
-  &emsp;<input type="submit" value="Add New +"><br><br>
-
-  <label for="number">Amount&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&ensp;</label>
-  <input type="number" id="amount" name="amount"><br><br>
-
-  <label for="date">Transaction Date&emsp;&emsp;&emsp;&ensp;&ensp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&ensp;</label>
-  <input type="date" id="date" name="date"><br><br>
-
-  <label for="instruction">Maturity Instructions &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&ensp;</label>
-  <input type="text" id="instruction" name="instruction"><br><br>
-
-  <label for="remarks">Remarks &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&ensp;</label>
-  <input type="text" id="remarks" name="remarks"><br><br>
-
-  <input type="submit" value="Save">&emsp;
-  <input type="submit" value="Reset">&emsp;
-  <input type="submit" value="Save as Template">
-
-  <div class="button">
-    <input type="submit" value="Continue">
+  <link rel="stylesheet" href="rtgs-transaction.component.css">
+<form [formGroup]="rtgsTransaction"(ngSubmit)="rtgsSubmitted()" class="border p-3 rounded-3">
+  <div class="row g-0">
+    <div class="col text-center p-2 mb-3 bg-light">
+      <span class=" fs-3">Initiate RTGS Payment</span>
+    </div>
   </div>
-</form>
-</div>
-</body>
-</html>
+  <div class="row">
+    <div class="col"> 
+      <label for="sender" class="form-label">From Account -</label><br><br>
+    </div>
+    <div class="col">
+      <input type="number" id="sender" formControlName="sender"><br><br>
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col mb-3">
+        <label for="receiver" class="form-label">To Account -</label><br><br>
+      </div>
+      <div class="col mb-3">
+        <input type="number" id="receiver" formControlName="receiver"><br><br>
+      </div>
+      <div class="col btn-lg ">
+        <input class="btn btn-primary" type="submit" value="Add New +">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col mb-3">
+        <label for="amount" class="form-label">Amount -</label><br>
+      </div>
+      <div class="col mb-3">
+        <input type="number" id="amount" formControlName="amount"><br><br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col mb-3">
+        <label for="date" class="form-label">Transaction Date-</label><br><br>
+      </div>
+      <div class="col mb-3">
+        <input type="date" id="date" formControlName="date"><br><br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col mb-3">
+        <label for="instructions" class="form-label">Marutity Instructions -</label><br><br>
+      </div>
+      <div class="col mb-3">
+        <input type="text" id="instructions" formControlName="instructions"><br><br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col mb-3">
+        <label for="remarks" class="form-label">Remarks -</label><br><br>
+      </div>
+      <div class="col mb-3">
+        <input type="text" id="remarks" formControlName="remarks"><br><br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col mb-3">
+        <input class="btn btn-primary" type="submit" value="Save">
+      </div>
+      <div class="col mb-3">
+        <input class="btn btn-primary" type="submit" value="Reset">
+      </div>
+      <div class="col mb-3">
+        <input class="btn btn-primary" type="submit" value="Save as Template">
+      </div>
+      <div class="col mb-3">
+        <input class="btn btn-primary" type="submit" value="Continue">
+      </div>
+    </div>

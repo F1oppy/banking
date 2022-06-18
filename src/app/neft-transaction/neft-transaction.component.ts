@@ -16,9 +16,7 @@ export class NEFTTransactionComponent implements OnInit {
     sender: new FormControl(""),
     receiver: new FormControl(""),
     amount: new FormControl(""),
-    date: new FormControl(""),
-    instructions: new FormControl(""),
-    remarks: new FormControl(""),
+    date: new FormControl("")
   });
 
   neftSubmitted(){
