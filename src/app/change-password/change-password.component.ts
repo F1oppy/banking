@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-change-password',
@@ -11,5 +12,14 @@ export class ChangePasswordComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  ChangePasswordComponent= new FormGroup({
+    PasswordComponent: new FormControl(""),
+    confirmloginpassword: new FormControl(""),
+    Transactionpassword: new FormControl(""),
+    ConfirmTransactionpassword: new FormControl(""),
+  });
+  changePasswordSubmitted(){
+    console.log(this.ChangePasswordComponent.value);
 
+  }
 }
