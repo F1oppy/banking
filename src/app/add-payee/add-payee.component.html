@@ -13,8 +13,17 @@
       <label for="name" class="form-label">Beneficiary Name -</label><br><br>
     </div>
     <div class="col">
-      <input type="text" id="name" formControlName="name"><br><br>
-    </div>
+      <input type="text" id="name" formControlName="name">
+      <div class="form-text text-danger" *ngIf="name.errors?.['required']&& (name.touched || name.dirty)">
+        Name is Required
+      </div>
+      <div class="form-text text-danger" *ngIf="name.errors?.['minlength']&& (name.touched || name.dirty)">
+        Name is too short
+      </div>
+      <div class="form-text text-danger" *ngIf="name.errors?.['pattern']&& (name.touched || name.dirty)">
+      Name should start with Alphabet
+      </div><br><br>
+  </div>
   </div>
 
     <div class="row">
@@ -22,7 +31,14 @@
         <label for="accno" class="form-label">Beneficiary Account Number -</label><br><br>
       </div>
       <div class="col mb-3">
-        <input type="number" id="accno" formControlName="accno"><br><br>
+        <input type="text" id="accno" formControlName="accno">
+        <div class="form-text text-danger" *ngIf="accno.errors?.['required']&& accno.touched">
+          Account Number is Required
+        </div>
+        <div class="form-text text-danger" *ngIf="accno.errors?.['pattern']&& (accno.touched || accno.dirty)">
+          Number is Required
+        </div>
+        <br><br>
       </div>
     </div>
 
@@ -31,7 +47,14 @@
         <label for="raccno" class="form-label">Re-Enter Account Number -</label><br>
       </div>
       <div class="col mb-3">
-        <input type="number" id="raccno" formControlName="raccno"><br><br>
+        <input type="text" id="raccno" formControlName="raccno">
+        <div class="form-text text-danger" *ngIf="raccno.errors?.['required']&& raccno.touched">
+          Account Number is Required
+        </div>
+        <div class="form-text text-danger" *ngIf="raccno.errors?.['pattern']&& (raccno.touched || raccno.dirty)">
+          Number is Required
+        </div>
+        <br><br>
       </div>
     </div>
   
@@ -60,3 +83,4 @@
         </div>
       </div>
     </div>
+</form>
