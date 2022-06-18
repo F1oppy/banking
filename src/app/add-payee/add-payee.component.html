@@ -2,8 +2,7 @@
 <html>
 <body>
     <link rel="stylesheet" href="add-payee.component.css">
-<div class="container">
-<form class="border border-dark">
+<form [formGroup]="addPayee" (ngSubmit)="beneficiarySubmitted()" class="border p-3 rounded-3">
   <div class="row g-0">
     <div class="col text-center p-2 mb-3 bg-light">
       <span class="fs-3">Add New Beneficiary</span>
@@ -11,33 +10,53 @@
   </div>
   <div class="row">
     <div class="col">
-      <label for="name" class="form-label">Beneficiary Name -</label><br>
-      <label for="number">Beneficiary Account Number -</label><br>
-      <label for="number">Re-Enter Account Number -</label><br>
+      <label for="name" class="form-label">Beneficiary Name -</label><br><br>
     </div>
     <div class="col">
-      <input type="text" id="name"><br><br>
+      <input type="text" id="name" formControlName="name"><br><br>
     </div>
   </div>
 
-  <label for="name">Beneficiary Name&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&ensp;</label>
-  <input class="inpRig" type="text" id="name" name="name"><br><br>
+    <div class="row">
+      <div class="col mb-3">
+        <label for="accno" class="form-label">Beneficiary Account Number -</label><br><br>
+      </div>
+      <div class="col mb-3">
+        <input type="number" id="accno" formControlName="accno"><br><br>
+      </div>
+    </div>
 
-  <label for="number">Beneficiary Account Number&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&ensp;</label>
-  <input class="inpRig" type="number" id="accno" name="accno"><br><br>
+    <div class="row">
+      <div class="col mb-3">
+        <label for="raccno" class="form-label">Re-Enter Account Number -</label><br>
+      </div>
+      <div class="col mb-3">
+        <input type="number" id="raccno" formControlName="raccno"><br><br>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col mb-3">
+        <input type="checkbox" id="saveBen" name="saveBen" value="y" formControlName="saveBen">
+      </div>
+      <div class="col mb-3">
+        <label for="saveBen">Save Beneficiary</label><br><br>
+     </div>
+    </div>
 
-  <label for="number">Re-Enter Account Number &ensp;&ensp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&ensp;</label>
-  <input class="inpRig" type="number" id="accno" name="accno"><br><br>
+    <div class="row">
+      <div class="col mb-3">
+        <label for="nickname" class="form-label">Nick Name -</label><br><br>
+      </div>
+      <div class="col mb-3">
+        <input type="text" id="nickname" formControlName="nickname"><br><br>
+      </div>
+    </div>
 
-  <input type="checkbox" id="saveBen" name="saveBen">
-  <label class="inpCen" for="saveBen">Save Beneficiary</label><br><br>
-
-  <label for="nickname">Nick Name &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&ensp;</label>
-  <input class="inpRig" type="text" id="nickname" name="nickname"><br><br>
-  <div class="button">
-  <input class="inpCen" type="submit" value="Save As Beneficiary">
-  </div>
-</form>
-</div>
-</body>
-</html>
+    <div class="row">
+      <div class="col-6 offset-3">
+        <div class="d-grid">
+        <input class="btn btn-primary" type="submit" value="Save As Beneficiary">
+        </div>
+      </div>
+    </div>
