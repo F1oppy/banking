@@ -1,6 +1,71 @@
 <!DOCTYPE html>
 <html>
 <body>
+  <link rel="stylesheet" href="imps-transaction.component.css">
+<form [formGroup]="impsTransaction"(ngSubmit)="impsSubmitted()" class="border p-3 rounded-3">
+  <div class="row g-0">
+    <div class="col text-center p-2 mb-3 bg-light">
+      <span class="fs-3">Add New Beneficiary</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="name" class="form-label">Beneficiary Name -</label><br><br>
+    </div>
+    <div class="col">
+      <input type="text" id="name" formControlName="name"><br><br>
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col mb-3">
+        <label for="accno" class="form-label">Beneficiary Account Number -</label><br><br>
+      </div>
+      <div class="col mb-3">
+        <input type="number" id="accno" formControlName="accno"><br><br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col mb-3">
+        <label for="raccno" class="form-label">Re-Enter Account Number -</label><br>
+      </div>
+      <div class="col mb-3">
+        <input type="number" id="raccno" formControlName="raccno"><br><br>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div class="col mb-3">
+        <input type="checkbox" id="saveBen" name="saveBen" value="y" formControlName="saveBen">
+      </div>
+      <div class="col mb-3">
+        <label for="saveBen">Save Beneficiary</label><br><br>
+     </div>
+    </div>
+
+    <div class="row">
+      <div class="col mb-3">
+        <label for="nickname" class="form-label">Nick Name -</label><br><br>
+      </div>
+      <div class="col mb-3">
+        <input type="text" id="nickname" formControlName="nickname"><br><br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6 offset-3">
+        <div class="d-grid">
+        <input class="btn btn-primary" type="submit" value="Save As Beneficiary">
+        </div>
+      </div>
+    </div>
+
+
+
+<!DOCTYPE html>
+<html>
+<body>
     <link rel="stylesheet" href="imps-transaction.component.css">
 <h2 class="Heading">Initiate IMPS Payment</h2>
 <div class="container">

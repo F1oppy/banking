@@ -12,4 +12,15 @@ export class IMPSTransactionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  impsTransaction= new FormGroup({
+    name: new FormControl(""),
+    accno: new FormControl(""),
+    raccno: new FormControl(""),
+    saveBen: new FormControl(""),
+    nickname: new FormControl(""),
+  });
+
+  impsSubmitted(){
+    console.log(this.impsTransaction.value);
+  }
 }
