@@ -1,6 +1,87 @@
 <!DOCTYPE html>
 <html>
 <body>
+  <link rel="stylesheet" href="neft-transaction.component.css">
+<form [formGroup]="neftTransaction"(ngSubmit)="neftSubmitted()" class="border p-3 rounded-3">
+  <div class="row g-0">
+    <div class="col text-center p-2 mb-3 bg-light">
+      <span class="fs-3">Initiate NEFT Payment</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <label for="sender" class="form-label">From Account -</label><br><br>
+    </div>
+    <div class="col">
+      <input type="number" id="sender" formControlName="sender"><br><br>
+    </div>
+  </div>
+
+    <div class="row">
+      <div class="col mb-3">
+        <label for="receiver" class="form-label">To Account -</label><br><br>
+      </div>
+      <div class="col mb-3">
+        <input type="number" id="receiver" formControlName="receiver"><br><br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col mb-3">
+        <label for="amount" class="form-label">Amount -</label><br>
+      </div>
+      <div class="col mb-3">
+        <input type="number" id="amount" formControlName="amount"><br><br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col mb-3">
+        <label for="date" class="form-label">Transaction Date-</label><br><br>
+      </div>
+      <div class="col mb-3">
+        <input type="date" id="date" formControlName="date"><br><br>
+      </div>
+    </div>
+
+    
+
+    <div class class="font-italic">
+      <div class="col mb-3">
+        Please note:
+        <ol>
+          <li>Transaction will be executed on the next working day if they are scheduled for Sundays, National Holidays, NEFT Holidays (as declared by RBI).</li><br>
+          <li>Timings for NEFT : Monday-Saturday(except 2nd and 4th Saturday) 6:00 AM - 6:30 PM.</li>
+        </ol>
+      </div>
+    </div>
+
+    
+
+    <div class="row">
+      <div class="col mb-3">
+        <input class="btn btn-primary" type="submit" value="Save">
+      </div>
+      <div class="col mb-3">
+        <input class="btn btn-primary" type="submit" value="Reset">
+      </div>
+      <div class="col mb-3">
+        <input class="btn btn-primary" type="submit" value="Save as Template">
+      </div>
+      <div class="col mb-3">
+        <input class="btn btn-primary" type="submit" value="Continue">
+      </div>
+    </div>
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<body>
     <link rel="stylesheet" href="neft-transaction.component.css">
 <h2 class="Heading">Initiate NEFT Payment</h2>
 <div class="container">
@@ -41,4 +122,4 @@
 </form>
 </div>
 </body>
-</html>
+</html> -->

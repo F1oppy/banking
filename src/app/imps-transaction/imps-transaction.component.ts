@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-imps-transaction',
@@ -12,15 +13,16 @@ export class IMPSTransactionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // impsTransaction= new FormGroup({
-  //   name: new FormControl(""),
-  //   accno: new FormControl(""),
-  //   raccno: new FormControl(""),
-  //   saveBen: new FormControl(""),
-  //   nickname: new FormControl(""),
-  // });
+  impsTransaction= new FormGroup({
+    sender: new FormControl(""),
+    receiver: new FormControl(""),
+    amount: new FormControl(""),
+    date: new FormControl(""),
+    instructions: new FormControl(""),
+    remarks: new FormControl(""),
+  });
 
-  // impsSubmitted(){
-  //   console.log(this.impsTransaction.value);
-  // }
+  impsSubmitted(){
+    console.log(this.impsTransaction.value);
+  }
 }

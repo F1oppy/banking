@@ -1,4 +1,4 @@
-h2{
+/* h2{
     text-align: center;
     border-style: solid;
     margin-left: 700px;
@@ -24,4 +24,7 @@ h2{
 }
 .margin{
     margin-left: 90px;
+} */
+.col mb-3{
+    font-style: italic;
 }

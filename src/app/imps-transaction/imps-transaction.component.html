@@ -2,11 +2,10 @@
 <html>
 <body>
   <link rel="stylesheet" href="imps-transaction.component.css">
-  <!-- [formGroup]="impsTransaction"(ngSubmit)="impsSubmitted()" -->
-<form class="border p-3 rounded-3">
+<form [formGroup]="impsTransaction"(ngSubmit)="impsSubmitted()" class="border p-3 rounded-3">
   <div class="row g-0">
     <div class="col text-center p-2 mb-3 bg-light">
-      <span class="fs-3">Add New Beneficiary</span>
+      <span class="fs-3">Initiate IMPS Payment</span>
     </div>
   </div>
   <div class="row">
@@ -20,56 +19,61 @@
 
     <div class="row">
       <div class="col mb-3">
-        <label for="accno" class="form-label">Beneficiary Account Number -</label><br><br>
+        <label for="receiver" class="form-label">To Account -</label><br><br>
       </div>
       <div class="col mb-3">
-        <input type="number" id="accno" formControlName="accno"><br><br>
+        <input type="number" id="receiver" formControlName="receiver"><br><br>
       </div>
     </div>
 
     <div class="row">
       <div class="col mb-3">
-        <label for="raccno" class="form-label">Re-Enter Account Number -</label><br>
+        <label for="amount" class="form-label">Amount -</label><br>
       </div>
       <div class="col mb-3">
-        <input type="number" id="raccno" formControlName="raccno"><br><br>
+        <input type="number" id="amount" formControlName="amount"><br><br>
       </div>
-    </div>
-  
-    <div class="row">
-      <div class="col mb-3">
-        <input type="checkbox" id="saveBen" name="saveBen" value="y" formControlName="saveBen">
-      </div>
-      <div class="col mb-3">
-        <label for="saveBen">Save Beneficiary</label><br><br>
-     </div>
     </div>
 
     <div class="row">
       <div class="col mb-3">
-        <label for="nickname" class="form-label">Nick Name -</label><br><br>
+        <label for="date" class="form-label">Transaction Date-</label><br><br>
       </div>
       <div class="col mb-3">
-        <input type="text" id="nickname" formControlName="nickname"><br><br>
+        <input type="date" id="date" formControlName="date"><br><br>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-6 offset-3">
-        <div class="d-grid">
-        <input class="btn btn-primary" type="submit" value="Save As Beneficiary">
-        </div>
+      <div class="col mb-3">
+        <label for="instructions" class="form-label">Marutity Instructions -</label><br><br>
+      </div>
+      <div class="col mb-3">
+        <input type="text" id="instructions" formControlName="instructions"><br><br>
       </div>
     </div>
 
+    <div class="row">
+      <div class="col mb-3">
+        <label for="remarks" class="form-label">Remarks -</label><br><br>
+      </div>
+      <div class="col mb-3">
+        <input type="text" id="remarks" formControlName="remarks"><br><br>
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="col mb-3">
+        <input class="btn btn-primary" type="submit" value="Save">
+      </div>
+      <div class="col mb-3">
+        <input class="btn btn-primary" type="submit" value="Reset">
+      </div>
+      <div class="col mb-3">
+        <input class="btn btn-primary" type="submit" value="Save as Template">
+      </div>
+      <div class="col mb-3">
+        <input class="btn btn-primary" type="submit" value="Continue">
+      </div>
+    </div>
 
-
-
-  <input type="submit" value="Save">&emsp;
-  <input type="submit" value="Reset">&emsp;
-  <input type="submit" value="Save as Template">
-
-  <div class="button">
-    <input type="submit" value="Continue">
-  </div>
