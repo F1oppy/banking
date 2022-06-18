@@ -13,7 +13,7 @@
       <label for="name" class="form-label">Beneficiary Name -</label><br><br>
     </div>
     <div class="col">
-      <input type="text" id="name" formControlName="name">
+      <input type="text" id="name" formControlName="name"><br><br>
       <div class="form-text text-danger" *ngIf="name.errors?.['required']&& (name.touched || name.dirty)">
         Name is Required
       </div>
@@ -33,7 +33,7 @@
       <div class="col mb-3">
         <input type="text" id="accno" formControlName="accno">
         <div class="form-text text-danger" *ngIf="accno.errors?.['required']&& accno.touched">
-          Account Number is Required
+        Account Number is Required
         </div>
         <div class="form-text text-danger" *ngIf="accno.errors?.['pattern']&& (accno.touched || accno.dirty)">
           Number is Required

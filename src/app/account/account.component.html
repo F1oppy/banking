@@ -1,48 +1,21 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <style> 
-            table, th, td,div {
-          border: 1px solid black;
-          border-collapse: collapse;
-          
-          padding: 10px;
-        }
-        
-        table.center {
-          margin-left: 40%; 
-          margin-right: auto;
-        }
-        
-        table.left {
-          margin-left: 35%; 
-          margin-right: 77%;
-        }
-        
-        .column {
-          float: left;
-          width: 14%;
-          padding: 10px;
-          height: 300px;
-        }
-
-        p.right {
-          margin-left: 40%; 
-          margin-right: auto;
- 
-        }
-
-        input.right {
-          margin-left: 25%; 
-          margin-right: auto;
- 
-        }
-
-        table.right {
-          margin-left: 5%; 
-          margin-right: 5%;
-        }
-       
-
+<body>
+    <link rel="stylesheet" href="account.component.css">
+    <form [formGroup]="accountcomponent" (ngSubmit)="accountcomponent()" class="border p-3 rounded-3">
+  <div class="row g-0">
+    <div class="col text-center p-2 mb-3 bg-light">
+      <span class="fs-3">Account Statement</span>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col mb-3">
+      <label for="nickname" class="form-label">Nick Name -</label><br><br>
+    </div>
+    <div class="col mb-3">
+      <input type="text" id="nickname" formControlName="nickname"><br><br>
+    </div>
+  </div>
         
         </style>
         </head>
