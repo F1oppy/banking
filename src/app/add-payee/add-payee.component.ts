@@ -8,6 +8,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AddPayeeComponent implements OnInit {
 
+  repeatAcc: string = 'node';
+
   constructor() { }
 
   ngOnInit(): void {
@@ -22,11 +24,12 @@ export class AddPayeeComponent implements OnInit {
   });
 
   beneficiarySubmitted(){
-    console.log(this.addPayee.get("name"));
-    console.log(this.addPayee.get("accno"));
-    console.log(this.addPayee.get("raccno"));
-    console.log(this.addPayee.get("saveBen"));
-    console.log(this.addPayee.get("nickname"));
+    if(this.accno.value==this.raccno.value){
+      console.log(this.addPayee.invalid);
+      this.repeatAcc='none'
+    }else{
+      this.repeatAcc='inline'
+    }
   }
 
   get name(): FormControl{

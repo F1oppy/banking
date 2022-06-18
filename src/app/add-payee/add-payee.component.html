@@ -45,16 +45,13 @@
     <div class="row">
       <div class="col mb-3">
         <label for="raccno" class="form-label">Re-Enter Account Number -</label><br>
+        <div class="form-text text-danger" *ngIf="raccno.errors?.['required']&& raccno.touched"></div>
       </div>
       <div class="col mb-3">
         <input type="text" id="raccno" formControlName="raccno">
-        <div class="form-text text-danger" *ngIf="raccno.errors?.['required']&& raccno.touched">
-          Account Number is Required
-        </div>
         <div class="form-text text-danger" *ngIf="raccno.errors?.['pattern']&& (raccno.touched || raccno.dirty)">
-          Number is Required
+          Account Nummber Does not Match!
         </div>
-        <br><br>
       </div>
     </div>
   
@@ -79,7 +76,7 @@
     <div class="row">
       <div class="col-6 offset-3">
         <div class="d-grid">
-        <input class="btn btn-primary" type="submit" value="Save As Beneficiary">
+        <input class="btn btn-primary" type="submit" [disabled]="addPayee.valid" value="Save As Beneficiary">
         </div>
       </div>
     </div>
