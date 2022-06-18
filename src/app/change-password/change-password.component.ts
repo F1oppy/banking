@@ -6,20 +6,20 @@ import { FormControl, FormGroup } from '@angular/forms';
   templateUrl: './change-password.component.html',
   styleUrls: ['./change-password.component.css']
 })
-export class ChangePasswordComponent implements OnInit {
+export class changePasswordComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  ChangePasswordComponent= new FormGroup({
+  changePasswordComponent= new FormGroup({
     PasswordComponent: new FormControl(""),
     confirmloginpassword: new FormControl(""),
     Transactionpassword: new FormControl(""),
     ConfirmTransactionpassword: new FormControl(""),
   });
   changePasswordSubmitted(){
-    console.log(this.ChangePasswordComponent.value);
+    console.log(this.changePasswordComponent.value);
 
   }
 }

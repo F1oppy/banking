@@ -1,82 +1,42 @@
-<!-- <!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <body>
-    <link rel="stylesheet" href="account.component.css">
-    <form [formGroup]="accountcomponent" (ngSubmit)="accountcomponent()" class="border p-3 rounded-3">
-  <div class="row g-0">
-    <div class="col text-center p-2 mb-3 bg-light">
-      <span class="fs-3">Account Statement</span>
-    </div>
+  <form class="border border-dark">
+<div class="row g-0">
+  <div class="col text-center p-2 mb-3 bg-light">
+    <span class="fs-3">Register</span>
+  </div>
   </div>
   <div class="row">
-    <div class="col mb-3">
-      <label for="nickname" class="form-label">Nick Name -</label><br><br>
-    </div>
-    <div class="col mb-3">
-      <input type="text" id="nickname" formControlName="nickname"><br><br>
-    </div>
-  </div>
-        
-        </style>
-        </head>
-        <body>
-            <table class="center">
-                <tr >
-                    <th>Account Statement</th>
-                </tr>
-            </table>
-            <br>
-            <table class="left">       
-                <div class="column">
-                    <p><b>Account Details</b></p>
-                    <p><b>Summary</b></p>
-                    <p><b>Funds Transfer</b></p>
-                    <p><b>Account Statement</b></p>
-                </div>
-            <link rel="stylesheet" href="account.component.css">
-            <h1 style="text-align:centre;">
-                
-                
-                
+    <div class="col">
+      <input type="date" class="form-control" id="statementfrom">
+      <div class="form-date date-danger" *ngIf="sender.errors?.['required']&& (sender.touched || sender.dirty)">
+        Date is Required
+      </div>
+      <br>
+      <div class="col mb-3">
+        <label for="upto" class="form-label">to -</label><br><br>
+      </div>
+      <div class="col mb-3">
+        <input type="date" id="upto" formControlName="upto">
+        <div class="form-date date-danger" *ngIf="receiver.errors?.['required']&& (receiver.touched || sender.dirty)">
+          Date is Required
+        </div>
+        <hr>
 
-            </h1>
-            <form ><p class="right">Statement From &emsp; <input type="date" id="date" values="">&emsp;  to &emsp; <input type="date" id="date" values="">
-                <table class="right" width="900" height="69"  border="1">
-                    <tr >
-                        <th>Select</th>
-                        <th>Account Number</th>
-                        <th>Name</th>
-                        <th>Account Type</th>
-                        <th>Balance</th>
-                    </tr>
-                    <tr>
-                        <td> 
-                           <select>
-                                <option value="none" Selected>Gender</option>
-                                <option value="male" Selected>Male</option>
-                                <option value="female" Selected>Female</option>
-                                <option value="other" Selected>other</option>
-                                </select>
+        <table>
+          <tr>
+            <th *ngFor ="let column of headers">
+              {{column}}
+            </th>
+          </tr>
 
-                            
-                        </td>
-                        <td> <input type="number" id="number" values=""></td>
-                        <td> <input type="name" id="name" values=""></td>
-                        
-                            <td> <select>
-                                <option>select an account type</option>
-                                <option>Checking</option>
-                                <option>Current Account</option>
-                                <option>Giro Account</option>
-                                <option>Regular</option>
-                                <option>Salary Account</option>
-                                <option>Saving</option>
-                            </select>
-                        </td>
-
-                        <td> <input type="balance" id="balance" values=""></td>
-                    </tr>
-                   
-                </table>
-                <br>
-                <input class="right" type="submit" value="Submit"> -->
+          <tr *ngFor = "let row of rows">
+            <td *ngFor = "let column of headers">
+              {{row[column]}}
+            </td>
+          </tr>
+          
+        </table>
+      
+   

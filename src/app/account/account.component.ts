@@ -11,5 +11,16 @@ export class AccountComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  header =["select", "Account Number" ,"Name" ,"Balance"];
+
+  rows=[
+    {
+      "select"            : " ",
+      "Account Number"   : " ",
+      "Name"              : " ",
+      "Balance"            : " "
+    }
+  ]
+
 
 }
