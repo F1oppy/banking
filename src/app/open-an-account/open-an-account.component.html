@@ -10,7 +10,9 @@
 <h2>Personal Details</h2>
 
 <form>
-    <label>Title  - </label>   
+
+<div>
+    <input type="text" [value]="accountType">
         <select>  
         <option value="Mr">Mr</option>  
         <option value="Ms">Ms</option>  
@@ -86,6 +88,7 @@
     <input type="checkbox" id="agree" name="agree">
     <label>I agree....</label><br><br>
     <button type="submit" form="nameform" value="Submit">Submit</button>
+    </div>
 </form>
 
 </body>

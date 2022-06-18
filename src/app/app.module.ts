@@ -19,6 +19,7 @@ import { IMPSTransactionComponent } from './imps-transaction/imps-transaction.co
 import { NEFTTransactionComponent } from './neft-transaction/neft-transaction.component';
 import { RTGSTransactionComponent } from './rtgs-transaction/rtgs-transaction.component';
 import { TransactionSuccessfulComponent } from './transaction-successful/transaction-successful.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [

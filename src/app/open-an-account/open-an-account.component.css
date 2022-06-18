@@ -16,3 +16,8 @@ body{
     margin-left: 700px;
     margin-right: 700px;
 }
+div{
+    margin-left: 50px;
+    margin-right: auto;
+    text-align: justify;
+}
