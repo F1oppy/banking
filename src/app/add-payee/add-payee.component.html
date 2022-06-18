@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="add-payee.component.css">
 <h2 class="Heading">Add New Beneficiary</h2>
 <div class="container">
-<form action="_blank" >
+<form #userName="ngForm" (ngSubmit)="onClickSubmit(userName.value)" >
 
   <label for="name">Beneficiary Name&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;-&emsp;&emsp;&emsp;&emsp;&ensp;</label>
   <input class="inpRig" type="text" id="name" name="name"><br><br>

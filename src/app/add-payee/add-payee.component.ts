@@ -11,5 +11,8 @@ export class AddPayeeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  onClickSubmit(result) {
+    console.log("You have entered : " + result.username); 
+ }
 
 }
