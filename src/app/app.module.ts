@@ -21,6 +21,7 @@ import { TransactionSuccessfulComponent } from './transaction-successful/transac
 import { FpComponent } from './fp/fp.component';
 import { ForgotuseridComponent } from './forgotuserid/forgotuserid.component';
 import { AccountLockedPageComponent } from './account-locked-page/account-locked-page.component';
+import { AccountStatementComponent } from './account-statement/account-statement.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,9 @@ import { AccountLockedPageComponent } from './account-locked-page/account-locked
     TransactionSuccessfulComponent,
     FpComponent,
     ForgotuseridComponent,
-    AccountLockedPageComponent
+    AccountLockedPageComponent,
+    AccountStatementComponent,
+    AccountStatementComponent
   ],
   imports: [
     BrowserModule,

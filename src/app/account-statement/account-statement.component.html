@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="account-statement.component.css" />
+</head>
+
+<body>
+    <div class="d-flex" id="wrapper">
+        <div class="bg-white" id="sidebar-wrapper">
+            <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
+                    class="me-2"></i>BANK ANARR</div>
+            <div class="list-group list-group-flush my-3">
+                <a routerLink="/dashboard" class="list-group-item list-group-item-action bg-transparent second-text active"><i
+                        class="fas fa-tachometer-alt me-2"></i>Account Details</a>
+                <a routerLink="/dashboard" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-project-diagram me-2"></i>Account Summary</a>
+                <a class="nav-link dropdown-toggle second-text list-group-item list-group-item-action bg-transparent second-text fw-bold" href="#" id="navbarDropdown"
+                       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       <i class="fas fa-user me-2"></i>Funds Transfer
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" routerLink="/neft-transaction">NEFT</a></li>
+                  <li><a class="dropdown-item" routerLink="/imps-transaction">IMPS</a></li>
+                  <li><a class="dropdown-item" routerLink="/rtgs-transaction">RTGS</a></li>
+                </ul>
+                <a routerLink="/account-statement"class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                        class="fas fa-paperclip me-2"></i>Account Statement</a>
+            </div>
+        </div>
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
+                <div class="p-2 d-flex align-items-center border border-dark border-3">
+                    <h2 class="fs-2 m-0">Account Statement</h2>
+                </div>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+
+            <div class="container-fluid px-4">
+
+                <div class="row my-5">
+                    <h6 class="col 1 fs-4 mb-3"></h6>
+                    <div class="row">
+                        <div class="col mb-3">
+                          <label for="date" class="form-label">Statement From-</label><br><br>
+                        </div>
+                        <div class="col mb-3">
+                          <input type="date" id="date" formControlName="date">
+                        </div>
+                        <div class="col mb-3">
+                            <input type="date" id="date" formControlName="date"><br><br>
+                          </div>
+                      </div>
+                    <div class="col">
+                        <table class="table bg-white rounded shadow-sm  table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Select</th>
+                                    <th scope="col">Account Number</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Account Type</th>
+                                    <th scope="col">Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">
+                                        <div class="form-check">
+                                            <input class="margin-left form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                            </label>
+                                          </div>
+                                    </th>
+                                    <td>987654321</td>
+                                    <td>Amruta</td>
+                                    <td>Savings</td>
+                                    <td>₹99200000321</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row"><div class="form-check">
+                                    <input class="margin-left form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                    </label>
+                                  </div>
+                                </th>
+                                <td>326159487</td>
+                                <td>Rutuja</td>
+                                <td>Savings</td>
+                                <td>₹987456123</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row"><div class="form-check">
+                                    <input class="margin-left form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                    </label>
+                                  </div>
+                                </th>
+                                <td>741852963</td>
+                                <td>Pawan</td>
+                                <td>Savings</td>
+                                <td>₹159487263</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row"><div class="form-check">
+                                    <input class="margin-left form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                    </label>
+                                  </div>
+                                </th>
+                                <td>123456789</td>
+                                <td>Neeraj</td>
+                                <td>Salary</td>
+                                <td>₹99299999321</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"><div class="form-check">
+                                        <input class="margin-left form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1">
+                                        </label>
+                                      </div>
+                                    </th>
+                                    <td>147258369</td>
+                                    <td>Aditya</td>
+                                    <td>Savings</td>
+                                    <td>₹21</td>
+                                  </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 offset-3 mb-6">
+          <div class="d-grid">
+          <input class="btn btn-primary" type="submit" routerLink="/dashboard" value="Submit">
+          </div>
+        </div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var el = document.getElementById("wrapper");
+        var toggleButton = document.getElementById("menu-toggle");
+
+        toggleButton.onclick = function () {
+            el.classList.toggle("toggled");
+        };
+    </script>
+    
+</body>
+
+</html>

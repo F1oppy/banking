@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountLockedPageComponent } from './account-locked-page/account-locked-page.component';
+import { AccountStatementComponent } from './account-statement/account-statement.component';
 import { AccountComponent } from './account/account.component';
 import { AddPayeeComponent } from './add-payee/add-payee.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
@@ -36,7 +37,8 @@ const routes: Routes = [
   {path: 'set-new-password', component: SetNewPasswordComponent},
   {path: 'transaction-successful', component: TransactionSuccessfulComponent},
   {path: '',redirectTo: '/home', pathMatch: 'full'},
-  {path: 'account-locked-page', component: AccountLockedPageComponent}
+  {path: 'account-locked-page', component: AccountLockedPageComponent},
+  {path: 'account-statement', component: AccountStatementComponent}
 ];
 
 @NgModule({
@@ -47,4 +49,4 @@ export class AppRoutingModule { }
 
 export const routingComponents = [AccountComponent, AddPayeeComponent, ChangePasswordComponent, DashboardComponent, ForgotuseridComponent,
    FpComponent, HomeComponent, IMPSTransactionComponent, LoginComponent, NEFTTransactionComponent, OpenAnAccountComponent, RegisterForInternetBankingComponent,
-  RTGSTransactionComponent, SessionExpiredComponent, SetNewPasswordComponent, TransactionSuccessfulComponent]
+  RTGSTransactionComponent, SessionExpiredComponent, SetNewPasswordComponent, TransactionSuccessfulComponent, AccountStatementComponent, AccountLockedPageComponent]
