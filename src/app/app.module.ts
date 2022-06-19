@@ -7,8 +7,6 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterForInternetBankingComponent } from './register-for-internet-banking/register-for-internet-banking.component';
 import { OpenAnAccountComponent } from './open-an-account/open-an-account.component';
-import { ForgetUserIDComponent } from './forget-user-id/forget-user-id.component';
-import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { SetNewPasswordComponent } from './set-new-password/set-new-password.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AccountComponent } from './account/account.component';
@@ -30,8 +28,6 @@ import { ForgotuseridComponent } from './forgotuserid/forgotuserid.component';
     LoginComponent,
     RegisterForInternetBankingComponent,
     OpenAnAccountComponent,
-    ForgetUserIDComponent,
-    ForgetPasswordComponent,
     SetNewPasswordComponent,
     DashboardComponent,
     AccountComponent,

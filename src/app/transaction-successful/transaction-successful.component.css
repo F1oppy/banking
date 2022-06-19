@@ -1,25 +1,3 @@
-h2{
-    text-align: center;
-    border-style: solid;
-    margin-left: 250px;
-    margin-right: 250px;
-    margin-top: 20px;
-}
-.container{
-    margin-top: 50px;
-    text-align: justify;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-.button{
-    text-align: center;
-}
-body{
-    padding-top: 0%;
-    padding-bottom: 5%;
-    margin-top: 10%;
-    margin-left: 250px;
-    margin-right: 250px;
-    border-style: solid;
+form{
+    width: 800px;
 }
