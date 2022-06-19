@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -17,7 +18,6 @@ import { IMPSTransactionComponent } from './imps-transaction/imps-transaction.co
 import { NEFTTransactionComponent } from './neft-transaction/neft-transaction.component';
 import { RTGSTransactionComponent } from './rtgs-transaction/rtgs-transaction.component';
 import { TransactionSuccessfulComponent } from './transaction-successful/transaction-successful.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FpComponent } from './fp/fp.component';
 import { ForgotuseridComponent } from './forgotuserid/forgotuserid.component';
 
