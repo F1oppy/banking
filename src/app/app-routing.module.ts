@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccountLockedPageComponent } from './account-locked-page/account-locked-page.component';
 import { AccountComponent } from './account/account.component';
 import { AddPayeeComponent } from './add-payee/add-payee.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
@@ -34,7 +35,8 @@ const routes: Routes = [
   {path: 'session-expired', component: SessionExpiredComponent},
   {path: 'set-new-password', component: SetNewPasswordComponent},
   {path: 'transaction-successful', component: TransactionSuccessfulComponent},
-  {path: '',redirectTo: '/home', pathMatch: 'full'}
+  {path: '',redirectTo: '/home', pathMatch: 'full'},
+  {path: 'account-locked-page', component: AccountLockedPageComponent}
 ];
 
 @NgModule({

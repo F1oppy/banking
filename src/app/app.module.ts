@@ -20,6 +20,7 @@ import { RTGSTransactionComponent } from './rtgs-transaction/rtgs-transaction.co
 import { TransactionSuccessfulComponent } from './transaction-successful/transaction-successful.component';
 import { FpComponent } from './fp/fp.component';
 import { ForgotuseridComponent } from './forgotuserid/forgotuserid.component';
+import { AccountLockedPageComponent } from './account-locked-page/account-locked-page.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ForgotuseridComponent } from './forgotuserid/forgotuserid.component';
     RTGSTransactionComponent,
     TransactionSuccessfulComponent,
     FpComponent,
-    ForgotuseridComponent
+    ForgotuseridComponent,
+    AccountLockedPageComponent
   ],
   imports: [
     BrowserModule,
