@@ -1,0 +1,44 @@
+<form [formGroup]="registerForm" (ngSubmit)="registerSubmitted()">
+    
+    <div class="row mb-3">
+        <div class="col text-center mb-3">
+            <span class="fs-4 fw-bold  border p-2 border-dark border-3">Forgot User ID</span>
+        </div>
+    </div>
+    <div class="row mb-3 border p-1 border-dark border-3">
+        <div class="col text-start">
+            <span class="fs-4 fw-bold ">Enter Details</span>
+        </div>
+    </div>
+
+<div class="row mb-3">
+    <div class="col ">
+        <label for="accountno" class="form-label">Enter Account Number</label>
+      </div>
+      <div class="col text-center pt-1">-</div>
+      <div class="col ">
+        <input type="text" id="accountno" class="form-control border-dark border-2" formControlName="accountno">
+      </div>
+</div>
+<div class="row mb-3">
+    <div class="col">
+        <label for="otp1" class="form-label">Enter OTP</label>
+      </div>
+      <div class="col text-center pt-1">-</div>
+      <div class="col ">
+        <input type="text" id="otp1" class="form-control border-dark border-2" formControlName="otp1">
+      </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="d-grid">
+      <button type="submit" class="btn btn-outline-dark border-dark border-2">Proceed</button>
+    </div>
+  </div>
+  <div class="col">
+    <div class="d-grid">
+      <button type="button" class="btn btn-outline-dark border-dark border-2">Back</button>
+    </div>
+  </div>
+</div>
+</form>

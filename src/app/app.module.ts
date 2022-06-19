@@ -20,6 +20,8 @@ import { NEFTTransactionComponent } from './neft-transaction/neft-transaction.co
 import { RTGSTransactionComponent } from './rtgs-transaction/rtgs-transaction.component';
 import { TransactionSuccessfulComponent } from './transaction-successful/transaction-successful.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FpComponent } from './fp/fp.component';
+import { ForgotuseridComponent } from './forgotuserid/forgotuserid.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     IMPSTransactionComponent,
     NEFTTransactionComponent,
     RTGSTransactionComponent,
-    TransactionSuccessfulComponent
+    TransactionSuccessfulComponent,
+    FpComponent,
+    ForgotuseridComponent
   ],
   imports: [
     BrowserModule,
