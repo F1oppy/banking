@@ -2,27 +2,36 @@
     <head>
         </head>
         <body>
-            <link rel="stylesheet" href="session-expired.component.css">
-            <h1 style="text-align:centre;">
-                
-                <div >
-                    Set New Password
+            <link rel="stylesheet" href="session-expired.component.css" >
+            <div class="row g-0">
+                <div class="col text-center p-2 mb-3 bg-light">
+                  <span class="fs-3">You have been logged out</span>
                 </div>
-                
-            </h1>
-            <form class="container">
-                
-                Login Password -    <input type="password" id="passwords" values=""><br>
-                <span id="messages"> </span><br>
-                Confirm Login Password  -  <input type="password" id="passwords" value=""><br>
-                <span id="messages"> </span><br>
-                Transaction Password - <input type="password" id="passwords" values=""><br>
-                <span id="message"> </span><br>
-                Confirm Transation Password - <input type="password" id="passwords" values=""><br><br><br>
-                <input type="submit" value="Submit">
-                
-            </form>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label for="name" class="form-text text-danger fw-bolder fs-4">Session Expired!</label><br><br>
+                </div>
+                <div class="col">
+                  Last Logged in: <input type="text" id="name" formControlName="name">
+              </div>
+              </div>
+            
+                <div class="row">
+                  <div class="col mt-5">
+                    <label for="accno" class="form-label">Suggestions -</label><br><br>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col mb-3 fs-5">
+                    <div class="form-text text-danger">
+                        For Security Reasons we have to disable the back button
+                    </div>
+                    <div>
+                      <a href="#">Click Here to go to Login Page</a><br><br>
+                    </div>
+                    <br><br>
+                  </div>
+                </div>
         </body>
-    
-</html>
-
+        </html>
