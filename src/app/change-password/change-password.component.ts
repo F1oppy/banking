@@ -6,7 +6,7 @@ import { FormControl, FormGroup } from '@angular/forms';
   templateUrl: './change-password.component.html',
   styleUrls: ['./change-password.component.css']
 })
-export class changePasswordComponent implements OnInit {
+export class ChangePasswordComponent implements OnInit {
 
   constructor() { }
 
