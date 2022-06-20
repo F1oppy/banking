@@ -18,7 +18,7 @@ export class IMPSTransactionComponent implements OnInit {
     sender: new FormControl("",[Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(10)]),
     receiver: new FormControl("",[Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(10)]),
     amount: new FormControl("",[Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(10)]),
-    date: new FormControl(""),
+    transactionDate: new FormControl("",[Validators.required]),
     instructions: new FormControl(""),
     remarks: new FormControl(""),
   });
@@ -36,8 +36,8 @@ export class IMPSTransactionComponent implements OnInit {
   get amount(): FormControl{
     return this.impsTransaction.get("amount") as FormControl;
   }
-  get date(): FormControl{
-    return this.impsTransaction.get("date") as FormControl;
+  get transactionDate(): FormControl{
+    return this.impsTransaction.get("transactionDate") as FormControl;
   }
   get instructions(): FormControl{
     return this.impsTransaction.get("instructions") as FormControl;

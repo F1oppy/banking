@@ -8,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class AddPayeeComponent implements OnInit {
 
-  repeatAcc: string = 'node';
+  repeatAccount: string = 'node';
 
   constructor() { }
 
@@ -16,30 +16,30 @@ export class AddPayeeComponent implements OnInit {
   }
 
   addPayee= new FormGroup({
-    name: new FormControl("",[Validators.required, Validators.minLength(2), Validators.pattern("[a-zA-Z].*")]),
-    accno: new FormControl("",[Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(10)]),
-    raccno: new FormControl("",[Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(10)]),
+    beneficiaryName: new FormControl("",[Validators.required, Validators.minLength(2), Validators.pattern("[a-zA-Z].*")]),
+    beneficiaryAccNo: new FormControl("",[Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(10), Validators.maxLength(10)]),
+    beneficiaryAccNoRe: new FormControl(""),
     saveBen: new FormControl(""),
     nickname: new FormControl(""),
   });
 
   beneficiarySubmitted(){
-    if(this.accno.value==this.raccno.value){
-      console.log(this.addPayee.invalid);
-      this.repeatAcc='none'
+    if(this.beneficiaryAccNo.value == this.beneficiaryAccNoRe.value){
+      console.log(this.addPayee.valid);
+      this.repeatAccount = 'none'
     }else{
-      this.repeatAcc='inline'
+      this.repeatAccount='inline'
     }
   }
 
-  get name(): FormControl{
-    return this.addPayee.get("name") as FormControl;
+  get beneficiaryName(): FormControl{
+    return this.addPayee.get("beneficiaryName") as FormControl;
   }
-  get accno(): FormControl{
-    return this.addPayee.get("accno") as FormControl;
+  get beneficiaryAccNo(): FormControl{
+    return this.addPayee.get("beneficiaryAccNo") as FormControl;
   }
-  get raccno(): FormControl{
-    return this.addPayee.get("raccno") as FormControl;
+  get beneficiaryAccNoRe(): FormControl{
+    return this.addPayee.get("beneficiaryAccNoRe") as FormControl;
   }
   get saveBen(): FormControl{
     return this.addPayee.get("saveBen") as FormControl;

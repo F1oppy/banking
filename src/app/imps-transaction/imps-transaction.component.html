@@ -14,13 +14,10 @@
     </div>
     <div class="col">
       <input type="text" id="sender" formControlName="sender">
-      <div class="form-text text-danger" *ngIf="sender.errors?.['required'] && (sender.touched || sender.dirty)">
-        Name is Required
-      </div>
-      <div class="form-text text-danger" *ngIf="sender.errors?.['pattern'] && (sender.touched || sender.dirty)">
-      Name should start with Alphabet
-      </div>
-      <br><br>
+      <div class="form-text text-danger" *ngIf="sender.errors?.['required'] && (sender.dirty || sender.touched)">Field is Required</div>
+        <div class="form-text text-danger" *ngIf="sender.errors?.['minlength']&& (sender.touched || sender.dirty)">Account Number is Invalid</div>
+        <div class="form-text text-danger" *ngIf="sender.errors?.['maxlength']&& (sender.touched || sender.dirty)">Account Number is Invalid</div>
+        <div class="form-text text-danger" *ngIf="sender.errors?.['pattern']&& (sender.touched || sender.dirty)">Account Number Must be only number</div><br><br>
     </div>
   </div>
 
@@ -30,13 +27,10 @@
       </div>
       <div class="col mb-3">
         <input type="text" id="receiver" formControlName="receiver">
-        <div class="form-text text-danger" *ngIf="receiver.errors?.['required']&& (receiver.touched || sender.dirty)">
-          Number is Required
-        </div>
-        <div class="form-text text-danger" *ngIf="receiver.errors?.['pattern']&& (receiver.touched || sender.dirty)">
-        Number is Required
-        </div>
-        <br><br>
+        <div class="form-text text-danger" *ngIf="receiver.errors?.['required'] && (receiver.dirty || receiver.touched)">Field is Required</div>
+        <div class="form-text text-danger" *ngIf="receiver.errors?.['minlength']&& (receiver.touched || receiver.dirty)">Account Number is Invalid</div>
+        <div class="form-text text-danger" *ngIf="receiver.errors?.['maxlength']&& (receiver.touched || receiver.dirty)">Account Number is Invalid</div>
+        <div class="form-text text-danger" *ngIf="receiver.errors?.['pattern']&& (receiver.touched || receiver.dirty)">Account Number Must be only number</div><br><br>
       </div>
       <div class="col btn-lg float-end">
         <input class="btn btn-primary" routerLink="/add-payee" type="submit" value="Add New +">
@@ -65,7 +59,8 @@
         <label for="date" class="form-label">Transaction Date-</label><br><br>
       </div>
       <div class="col mb-3">
-        <input type="date" id="date" formControlName="date"><br><br>
+        <input type="date" id="transactionDate" formControlName="transactionDate"><br><br>
+        <div class="form-text text-danger" *ngIf="transactionDate.errors?.['required'] && (transactionDate.dirty || transactionDate.touched)">Date is Required</div>
       </div>
     </div>
 
@@ -101,4 +96,3 @@
         <input routerLink="/transaction-successful" class="btn btn-primary" type="submit" value="Continue">
       </div>
     </div>
-

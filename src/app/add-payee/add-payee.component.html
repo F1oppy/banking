@@ -10,48 +10,36 @@
   </div>
   <div class="row">
     <div class="col">
-      <label for="name" class="form-label">Beneficiary Name -</label><br><br>
+      <label for="beneficiaryName" class="form-label">Beneficiary Name -</label><br><br>
     </div>
     <div class="col">
-      <input type="text" id="name" formControlName="name">
-      <div class="form-text text-danger" *ngIf="name.errors?.['required']&& (name.touched || name.dirty)">
-        Name is Required
-      </div>
-      <div class="form-text text-danger" *ngIf="name.errors?.['minlength']&& (name.touched || name.dirty)">
-        Name is too short
-      </div>
-      <div class="form-text text-danger" *ngIf="name.errors?.['pattern']&& (name.touched || name.dirty)">
-      Name should start with Alphabet
-      </div><br><br>
+      <input type="text" id="beneficiaryName" formControlName="beneficiaryName">
+      <div class="form-text text-danger" *ngIf="beneficiaryName.errors?.['required'] && (beneficiaryName.dirty || beneficiaryName.touched)">Field is Required</div>
+      <div class="form-text text-danger" *ngIf="beneficiaryName.errors?.['minlength']&& (beneficiaryName.touched || beneficiaryName.dirty)">Name is too short</div>
+      <div class="form-text text-danger" *ngIf="beneficiaryName.errors?.['pattern']&& (beneficiaryName.touched || beneficiaryName.dirty)">Name should start with Alphabet</div><br><br>
   </div>
   </div>
 
     <div class="row">
       <div class="col mb-3">
-        <label for="accno" class="form-label">Beneficiary Account Number -</label><br><br>
+        <label for="beneficiaryAccNo" class="form-label">Beneficiary Account Number -</label><br><br>
       </div>
       <div class="col mb-3">
-        <input type="text" id="accno" formControlName="accno">
-        <div class="form-text text-danger" *ngIf="accno.errors?.['required']&& accno.touched">
-        Account Number is Required
-        </div>
-        <div class="form-text text-danger" *ngIf="accno.errors?.['pattern']&& (accno.touched || accno.dirty)">
-          Number is Required
-        </div>
+        <input type="text" id="beneficiaryAccNo" formControlName="beneficiaryAccNo">
+        <div class="form-text text-danger" *ngIf="beneficiaryAccNo.errors?.['required'] && (beneficiaryAccNo.dirty || beneficiaryAccNo.touched)">Field is Required</div>
+        <div class="form-text text-danger" *ngIf="beneficiaryAccNo.errors?.['minlength']&& (beneficiaryAccNo.touched || beneficiaryAccNo.dirty)">Account Number is Invalid</div>
+        <div class="form-text text-danger" *ngIf="beneficiaryAccNo.errors?.['maxlength']&& (beneficiaryAccNo.touched || beneficiaryAccNo.dirty)">Account Number is Invalid</div>
+        <div class="form-text text-danger" *ngIf="beneficiaryAccNo.errors?.['pattern']&& (beneficiaryAccNo.touched || beneficiaryAccNo.dirty)">Account Number Must be only number</div><br><br>
         <br><br>
       </div>
     </div>
 
     <div class="row">
       <div class="col mb-3">
-        <label for="raccno" class="form-label">Re-Enter Account Number -</label><br>
-        <div class="form-text text-danger" *ngIf="raccno.errors?.['required']&& raccno.touched"></div>
-      </div>
-      <div class="col mb-3">
-        <input type="text" id="raccno" formControlName="raccno">
-        <div class="form-text text-danger" *ngIf="raccno.errors?.['pattern']&& (raccno.touched || raccno.dirty)">
-          Account Nummber Does not Match!
-        </div>
+        <label for="beneficiaryAccNoRe" class="form-label">Re-Enter Account Number -</label><br></div>
+        <div class="col mb-3">
+          <input type="text" id="beneficiaryAccNoRe" formControlName="beneficiaryAccNoRe">
+          <!-- <div class="form-text text-danger" [ngStyle]="{'display':repeatAccount}">Account Number does not matches!</div><br><br> -->
       </div>
     </div>
   
@@ -76,7 +64,8 @@
     <div class="row">
       <div class="col-6 offset-3">
         <div class="d-grid">
-        <input class="btn btn-primary" type="submit" [disabled]="addPayee.valid" routerLink="/dashboard" value="Save As Beneficiary">
+        <button type="submit" [disabled]="addPayee.invalid" class="btn btn-primary">Save As Beneficiary</button>
+  
         </div>
       </div>
     </div>
