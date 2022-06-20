@@ -25,7 +25,8 @@
                         <div class="form-outline">
                           <input type="text" id="firstName" class="form-control form-control-lg" formControlName="firstName"/>                          
                           <label class="form-label" for="firstName">First name</label>
-                          <div class="form-text text-danger" *ngIf="firstName.errors?.['required']">Field is Required</div>
+                          <div class="form-text text-danger" *ngIf="firstName.errors?.['required'] && (firstName.dirty || firstName.touched)">Field is Required</div>
+                          <div class="form-text text-danger" *ngIf="firstName.errors?.['minlength'] && (firstName.dirty || firstName.touched)">Minimum Length is 3</div>
                         </div>
   
                       </div>
@@ -34,7 +35,8 @@
                         <div class="form-outline">
                           <input type="text" id="lastName" class="form-control form-control-lg" formControlName="lastName" />
                           <label class="form-label" for="lastName">Last name</label>
-                          <div class="form-text text-danger" *ngIf="lastName">Field is Required</div>
+                          <div class="form-text text-danger" *ngIf="lastName.errors?.['required'] && (lastName.dirty || lastName.touched)">Field is Required</div>
+                          <div class="form-text text-danger" *ngIf="lastName.errors?.['minlength'] && (lastName.dirty || lastName.touched)">Minimum Length is 3</div>
                         </div>
   
                       </div>
@@ -44,7 +46,8 @@
                         <div class="form-outline">
                             <input type="text" id="fatherName" class="form-control form-control-lg" formControlName="fatherName" />
                             <label class="form-label" for="fatherName">Father's Name</label>
-                            <div class="form-text text-danger" *ngIf="fatherName">Field is Required</div>
+                            <div class="form-text text-danger" *ngIf="fatherName.errors?.['required'] && (fatherName.dirty || fatherName.touched)">Field is Required</div>
+                            <div class="form-text text-danger" *ngIf="fatherName.errors?.['minlength'] && (fatherName.dirty || fatherName.touched)">Minimum Length is 3</div>
                           </div>
                     </div>
   
@@ -52,7 +55,9 @@
                       <div class="form-outline">
                         <input type="text" id="mobileNumber" class="form-control form-control-lg" formControlName="mobileNumber" />
                         <label class="form-label" for="mobileNumber">Mobile Number</label>
-                        <div class="form-text text-danger" *ngIf="mobileNumber">Field is Required</div>
+                        <div class="form-text text-danger" *ngIf="mobileNumber.errors?.['required'] && (mobileNumber.dirty || mobileNumber.touched)">Field is Required</div>
+                        <div class="form-text text-danger" *ngIf="mobileNumber.errors?.['minlength'] && (mobileNumber.dirty || mobileNumber.touched)">Minimum Length is 10</div>
+                        <div class="form-text text-danger" *ngIf="mobileNumber.errors?.['maxlength'] && (mobileNumber.dirty || mobileNumber.touched)">Minimum Length is 10</div>
                       </div>
                     </div>
   
@@ -61,7 +66,8 @@
                             <div class="form-outline">
                               <input type="text" id="emailId" class="form-control form-control-lg" formControlName="emailId" />
                               <label class="form-label" for="emailId">Email ID</label>
-                              <div class="form-text text-danger" *ngIf="emailId">Field is Required</div>
+                              <div class="form-text text-danger" *ngIf="emailId.errors?.['required'] && (emailId.dirty || emailId.touched)">Field is Required</div>
+                              <div class="form-text text-danger" *ngIf="emailId.errors?.['email'] && (emailId.dirty || emailId.touched)">Email ID is invalid</div>
                         </div>
   
                       </div>
@@ -70,7 +76,10 @@
                             <div class="form-outline">
                               <input type="text" id="aadharNumber" class="form-control form-control-lg" formControlName="aadharNumber" />
                               <label class="form-label" for="aadharNumber" >Aadhar Card Number</label>
-                              <div class="form-text text-danger" *ngIf="aadharNumber">Field is Required</div>
+                              <div class="form-text text-danger" *ngIf="aadharNumber.errors?.['required'] && (aadharNumber.dirty || aadharNumber.touched)">Field is Required</div>
+                              <div class="form-text text-danger" *ngIf="aadharNumber.errors?.['minlength'] && (aadharNumber.dirty || aadharNumber.touched)">Minimum Length is 12</div>
+                              <div class="form-text text-danger" *ngIf="aadharNumber.errors?.['maxlength'] && (aadharNumber.dirty || aadharNumber.touched)">Maximum Length is 12</div>
+                              <div class="form-text text-danger" *ngIf="aadharNumber.errors?.['pattern'] && (aadharNumber.dirty || aadharNumber.touched)">Only Numbers are allowed</div>
                             </div>
                         </div>
                     </div>
@@ -79,7 +88,7 @@
                             <div class="form-outline">
                               <input type="date" id="dOB" class="form-control form-control-lg" formControlName="dOB" />
                               <label class="form-label" for="DOB" >Date of Birth</label>
-                              <div class="form-text text-danger" *ngIf="dOB">Field is Required</div>
+                              <div class="form-text text-danger" *ngIf="dOB.errors?.['required'] && (dOB.dirty || dOB.touched)">Field is Required</div>
                         </div>
                         </div>
                     </div>
@@ -88,7 +97,7 @@
                             <div class="form-outline">
                               <input type="text" id="occupationType" class="form-control form-control-lg" formControlName="occupationType" />
                               <label class="form-label" for="occupationType" >Occupation Type</label>
-                              <div class="form-text text-danger" *ngIf="occupationType">Field is Required</div>
+                              <div class="form-text text-danger" *ngIf="occupationType.errors?.['required'] && (occupationType.dirty || occupationType.touched)">Field is Required</div>
                         </div>
                         </div>
                     </div>
@@ -97,7 +106,7 @@
                             <div class="form-outline">
                               <input type="text" id="sourceOfIncome" class="form-control form-control-lg" formControlName="sourceOfIncome" />
                               <label class="form-label" for="sourceOfIncome" >Source of Income</label>
-                              <div class="form-text text-danger" *ngIf="sourceOfIncome">Field is Required</div>
+                              <div class="form-text text-danger" *ngIf="sourceOfIncome.errors?.['required'] && (sourceOfIncome.dirty || sourceOfIncome.touched)">Field is Required</div>
                         </div>
                         </div>
                     </div>
@@ -106,7 +115,8 @@
                             <div class="form-outline">
                               <input type="text" id="grossAnnualIncome" class="form-control form-control-lg" formControlName="grossAnnualIncome" />
                               <label class="form-label" for="grossAnnualIncome">Gross Annual Income</label>
-                              <div class="form-text text-danger" *ngIf="grossAnnualIncome">Field is Required</div>
+                              <div class="form-text text-danger" *ngIf="grossAnnualIncome.errors?.['required'] && (grossAnnualIncome.dirty || grossAnnualIncome.touched)">Field is Required</div>
+                              <div class="form-text text-danger" *ngIf="grossAnnualIncome.errors?.['pattern'] && (grossAnnualIncome.dirty || grossAnnualIncome.touched)">Only Numbers are allowed</div>
                         </div>
                         </div>
                     </div>
@@ -121,7 +131,7 @@
                       <div class="form-outline form-white">
                         <input type="text" id="addressLine1" class="form-control form-control-lg" formControlName="addressLine1" />
                         <label class="form-label" for="addressLine1" >Address Line 1</label>
-                        <div class="form-text text-danger" *ngIf="addressLine1">Field is Required</div>
+                        <div class="form-text text-danger" *ngIf="addressLine1.errors?.['required'] && (addressLine1.dirty || addressLine1.touched)">Field is Required</div>
                       </div>
                     </div>
   
@@ -138,7 +148,7 @@
                         <div class="form-outline form-white">
                           <input type="text" id="city" class="form-control form-control-lg" formControlName="city" />
                           <label class="form-label" for="city" >City</label>
-                          <div class="form-text text-danger" *ngIf="city">Field is Required</div>
+                          <div class="form-text text-danger" *ngIf="city.errors?.['required'] && (city.dirty || city.touched)">Field is Required</div>
                         </div>
   
                       </div>
@@ -147,7 +157,10 @@
                         <div class="form-outline form-white">
                           <input type="text" id="postalCode" class="form-control form-control-lg" formControlName="postalCode" />
                           <label class="form-label" for="postalCode" >Postal Code</label>
-                          <div class="form-text text-danger" *ngIf="postalCode">Field is Required</div>
+                          <div class="form-text text-danger" *ngIf="postalCode.errors?.['required'] && (postalCode.dirty || postalCode.touched)">Field is Required</div>
+                          <div class="form-text text-danger" *ngIf="postalCode.errors?.['minlength'] && (postalCode.dirty || postalCode.touched)">Minimum Length is 6</div>
+                          <div class="form-text text-danger" *ngIf="postalCode.errors?.['maxlength'] && (postalCode.dirty || postalCode.touched)">Maximum Length is 6</div>
+                          <div class="form-text text-danger" *ngIf="postalCode.errors?.['pattern'] && (postalCode.dirty || postalCode.touched)">Only Numbers are allowed</div>
                         </div>
   
                       </div>
@@ -157,7 +170,7 @@
                       <div class="form-outline form-white">
                         <input type="text" id="country" class="form-control form-control-lg" formControlName="country" />
                         <label class="form-label" for="country" >Country</label>
-                        <div class="form-text text-danger" *ngIf="country">Field is Required</div>
+                        <div class="form-text text-danger" *ngIf="country.errors?.['required'] && (country.dirty || country.touched)">Field is Required</div>
                       </div>
                     </div>
   
@@ -167,79 +180,13 @@
                         <div class="form-outline form-white">
                           <input type="text" id="landmark" class="form-control form-control-lg" formControlName="landmark" />
                           <label class="form-label" for="landmark" >Landmark</label>
-                          <div class="form-text text-danger" *ngIf="landmark">Field is Required</div>
+                          <div class="form-text text-danger" *ngIf="landmark.errors?.['required'] && (landmark.dirty || landmark.touched)">Field is Required</div>
                         </div>
   
                       </div>
                       
                     </div>
-
-                    <!-- <div class="form-check d-flex justify-content-start mb-4 pb-3">
-                        <label class="form-check-label text-white" for="form2Example3">
-                          <h4>Permanent Address</h4>
-                        </label>
-                      </div>
-  
-                    <div class="form-check d-flex justify-content-start mb-4 pb-3">
-                        <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c" />
-                        <label class="form-check-label text-white" for="form2Example3">
-                          Permanent Address same as Mailing Address
-                        </label>
-                      </div>
-                      
-
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Examplea2">Address Line 1</label>
-                        </div>
-                      </div>
-    
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea3" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Examplea3">Address Line 2</label>
-                        </div>
-                      </div>
-    
-                      <div class="row">
-                        <div class="col-md-5 mb-4 pb-2">
-    
-                          <div class="form-outline form-white">
-                            <input type="text" id="form3Examplea4" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Examplea4">City</label>
-                          </div>
-    
-                        </div>
-                        <div class="col-md-7 mb-4 pb-2">
-    
-                          <div class="form-outline form-white">
-                            <input type="text" id="form3Examplea5" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Examplea5">Pin Code</label>
-                          </div>
-    
-                        </div>
-                      </div>
-    
-                      <div class="mb-4 pb-2">
-                        <div class="form-outline form-white">
-                          <input type="text" id="form3Examplea6" class="form-control form-control-lg" />
-                          <label class="form-label" for="form3Examplea6">Country</label>
-                        </div>
-                      </div>
-    
-                      <div class="row">
-                        <div class="mb-4 pb-2">
-    
-                          <div class="form-outline form-white">
-                            <input type="text" id="form3Examplea7" class="form-control form-control-lg" />
-                            <label class="form-label" for="form3Examplea7">Landmark</label>
-                          </div>
-    
-                        </div>
-                      </div> -->
-
-  
+                    
                     <div class="form-check d-flex justify-content-start mb-4 pb-3">
                       <input class="form-check-input me-3" type="checkbox" value="" id="debitCard" formControlName="debitCard" />
                       <label class="form-check-label text-white" for="debitCard">
@@ -260,10 +207,9 @@
                         </label>
                       </div>
                       
-                      <div class="form-text text-danger" *ngIf="termsConditions">Please Accept the Terms And Conditions</div>
+                      <div class="form-text text-danger" *ngIf="termsConditions.errors?.['required']" >Please Accept the Terms And Conditions</div>
   
-                    <button  type="submit" class="btn btn-light btn-lg"
-                      data-mdb-ripple-color="dark">Submit</button>
+                    <button  type="submit" [disabled]="openAnAccount.invalid" class="btn btn-primary">Submit</button>
   
                   </div>
                 </div>

@@ -14,20 +14,20 @@ export class OpenAnAccountComponent implements OnInit {
   }
 
   openAnAccount = new FormGroup({
-    firstName: new FormControl("",[Validators.required]),
-    lastName: new FormControl("",[Validators.required]),
-    fatherName: new FormControl("",[Validators.required]),
-    mobileNumber: new FormControl("",[Validators.required]),
-    emailId: new FormControl("",[Validators.required]),
-    aadharNumber: new FormControl("",[Validators.required]),
+    firstName: new FormControl("",[Validators.required,Validators.minLength(3)]),
+    lastName: new FormControl("",[Validators.required,Validators.minLength(3)]),
+    fatherName: new FormControl("",[Validators.required,Validators.minLength(3)]),
+    mobileNumber: new FormControl("",[Validators.required,Validators.minLength(10),Validators.maxLength(10)]),
+    emailId: new FormControl("",[Validators.required, Validators.email]),
+    aadharNumber: new FormControl("",[Validators.required,Validators.minLength(12),Validators.maxLength(12), Validators.pattern("[0-9]*")]),
     dOB: new FormControl("",[Validators.required]),
     occupationType: new FormControl("",[Validators.required]),
     sourceOfIncome: new FormControl("",[Validators.required]),
-    grossAnnualIncome: new FormControl("",[Validators.required]),
+    grossAnnualIncome: new FormControl("",[Validators.required, Validators.pattern("[0-9]*")]),
     addressLine1: new FormControl("",[Validators.required]),
     addressLine2: new FormControl(""),
     city: new FormControl("",[Validators.required]),
-    postalCode: new FormControl("",[Validators.required]),
+    postalCode: new FormControl("",[Validators.required,Validators.minLength(6),Validators.maxLength(6), Validators.pattern("[0-9]*")]),
     country: new FormControl("",[Validators.required]),
     landmark: new FormControl(""),
     debitCard: new FormControl(""),
@@ -36,7 +36,7 @@ export class OpenAnAccountComponent implements OnInit {
   });
 
   openAnAccountSubmitted(){
-    console.log(this.openAnAccount.get("firstName"));
+    console.log(this.openAnAccount.value);
   }
 
   get firstName(): FormControl{
