@@ -1,4 +1,4 @@
-<form [formGroup]="registerForm" (ngSubmit)="registerSubmitted()">
+<form [formGroup]="forgotuseridForm" (ngSubmit)="forgotuseridSubmitted()">
     
     <div class="row mb-3">
         <div class="col text-center mb-3">
@@ -13,26 +13,47 @@
 
 <div class="row mb-3">
     <div class="col ">
-        <label for="accountno" class="form-label">Enter Account Number</label>
+        <label for="accno" class="form-label">Enter Account Number</label>
       </div>
       <div class="col text-center pt-1">-</div>
       <div class="col ">
-        <input type="text" id="accountno" class="form-control border-dark border-2" formControlName="accountno">
+        <input type="text" id="accno" class="form-control border-dark border-2" formControlName="accno">
+        <div class="form-text text-danger" *ngIf="accno.errors?.['required'] && (accno.dirty || accno.touched)">
+          Account Number is Required
+        </div>
+        <div class="form-text text-danger" *ngIf="accno.errors?.['pattern'] && (accno.dirty || accno.touched)">
+          Account Number should contain only Digits
+        </div>
+        <div class="form-text text-danger" *ngIf="accno.errors?.['minlength'] && (accno.dirty || accno.touched)">
+          10 Digit Account Number is Required
+        </div>
+        <div class="form-text text-danger" *ngIf="accno.errors?.['maxlength'] && (accno.dirty || accno.touched)">
+          10 Digit Account Number is Required
+        </div>
       </div>
 </div>
 <div class="row mb-3">
     <div class="col">
-        <label for="otp1" class="form-label">Enter OTP</label>
+        <label for="otpm1e" class="form-label">Enter OTP</label>
       </div>
       <div class="col text-center pt-1">-</div>
       <div class="col ">
-        <input type="text" id="otp1" class="form-control border-dark border-2" formControlName="otp1">
+        <input type="text" id="otpm1e" class="form-control border-dark border-2" formControlName="otpm1e">
+        <div class="form-text text-danger" *ngIf="otpm1e.errors?.['required'] && (otpm1e.dirty || otpm1e.touched)">
+          OTP is Required
+        </div>
+        <div class="form-text text-danger" *ngIf="otpm1e.errors?.['pattern'] && (otpm1e.dirty || otpm1e.touched)">
+          OTP should contain only Digits
+        </div>
+        <div class="form-text text-danger" *ngIf="otpm1e.errors?.['minlength'] || otpm1e.errors?.['maxlength'] && (otpm1e.dirty || otpm1e.touched)">
+          6 Digit OTP is Required
+        </div>
       </div>
 </div>
 <div class="row">
   <div class="col">
     <div class="d-grid">
-      <button type="submit" class="btn btn-outline-dark border-dark border-2">Proceed</button>
+      <button type="submit" [disabled]="forgotuseridForm.invalid" class="btn btn-outline-dark border-dark border-2">Proceed</button>
     </div>
   </div>
   <div class="col">

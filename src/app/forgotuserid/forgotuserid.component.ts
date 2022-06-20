@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-forgotuserid',
@@ -12,12 +12,18 @@ export class ForgotuseridComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  registerForm = new FormGroup({
-    accountno: new FormControl(""),
-    otp1: new FormControl("")
+  forgotuseridForm = new FormGroup({
+    accno: new FormControl("",[Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(10), Validators.maxLength(10)]),
+    otpm1e: new FormControl("",[Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(6), Validators.maxLength(6)])
   });
-  registerSubmitted(){
-    console.log(this.registerForm.value);
+  forgotuseridSubmitted(){
+    console.log(this.forgotuseridForm.value);
+  }
+  get accno(): FormControl{
+    return this.forgotuseridForm.get("accno") as FormControl;
+  }
+  get otpm1e(): FormControl{
+    return this.forgotuseridForm.get("otpm1e") as FormControl;
   }
 
 }
