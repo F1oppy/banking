@@ -31,10 +31,10 @@
       <div class="col mb-3">
         <input type="text" id="receiver" formControlName="receiver">
         <div class="form-text text-danger" *ngIf="receiver.errors?.['required']&& (receiver.touched || sender.dirty)">
-          Name is Required
+          Number is Required
         </div>
         <div class="form-text text-danger" *ngIf="receiver.errors?.['pattern']&& (receiver.touched || sender.dirty)">
-        Name should start with Alphabet
+        Number is Required
         </div>
         <br><br>
       </div>
