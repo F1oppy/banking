@@ -14,10 +14,10 @@
     </div>
     <div class="col">
       <input type="text" id="sender" formControlName="sender">
-      <div class="form-text text-danger" *ngIf="sender.errors?.['required']&& (sender.touched || sender.dirty)">
+      <div class="form-text text-danger" *ngIf="sender.errors?.['required'] && (sender.touched || sender.dirty)">
         Name is Required
       </div>
-      <div class="form-text text-danger" *ngIf="sender.errors?.['pattern']&& (sender.touched || sender.dirty)">
+      <div class="form-text text-danger" *ngIf="sender.errors?.['pattern'] && (sender.touched || sender.dirty)">
       Name should start with Alphabet
       </div>
       <br><br>
