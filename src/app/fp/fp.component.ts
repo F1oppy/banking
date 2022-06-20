@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-fp',
@@ -12,12 +12,18 @@ export class FpComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  registerForm = new FormGroup({
-    userid: new FormControl(""),
-    otp: new FormControl("")
+  forgotpasswordForm = new FormGroup({
+    userid: new FormControl("",[Validators.required, Validators.pattern("[a-zA-Z].*"), Validators.minLength(2)]),
+    otpm1f: new FormControl("",[Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(6), Validators.maxLength(6)])
   });
-  registerSubmitted(){
-    console.log(this.registerForm.value);
+  forgotpasswordSubmitted(){
+    console.log(this.forgotpasswordForm.value);
+  }
+  get userid(): FormControl{
+    return this.forgotpasswordForm.get("userid") as FormControl;
+  }
+  get otpm1f(): FormControl{
+    return this.forgotpasswordForm.get("otpm1f") as FormControl;
   }
 
 }

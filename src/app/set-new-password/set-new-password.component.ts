@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-set-new-password',
@@ -8,16 +8,29 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class SetNewPasswordComponent implements OnInit {
 
+  repeatPass: string = 'none';
   constructor() { }
 
   ngOnInit(): void {
   }
-  registerForm = new FormGroup({
-    inputPassword1: new FormControl(""),
-    inputPassword2: new FormControl("")
+    setnewpasswordForm = new FormGroup({
+    newpassword: new FormControl("",[Validators.required, Validators.minLength(8), Validators.maxLength(15)]),
+    confirmnewpassword: new FormControl("")
   });
-  registerSubmitted(){
-    console.log(this.registerForm.value);
+  setnewpasswordSubmitted(){
+    if(this.newpassword.value == this.confirmnewpassword.value){
+      console.log(this.setnewpasswordForm.value);
+    }
+    else{
+      this.repeatPass='inline'
+    }
   }
+  get newpassword(): FormControl{
+    return this.setnewpasswordForm.get("newpassword") as FormControl;
+  }
+  get confirmnewpassword(): FormControl{
+    return this.setnewpasswordForm.get("confirmnewpassword") as FormControl;
+  }
+
 
 }

@@ -1,4 +1,4 @@
-<form [formGroup]="registerForm" (ngSubmit)="registerSubmitted()">
+<form [formGroup]="forgotpasswordForm" (ngSubmit)="forgotpasswordSubmitted()">
     
     <div class="row mb-3">
         <div class="col text-center mb-3">
@@ -18,21 +18,39 @@
       <div class="col text-center pt-1">-</div>
       <div class="col ">
         <input type="text" id="userid" class="form-control border-dark border-2" formControlName="userid">
+        <div class="form-text text-danger" *ngIf="userid.errors?.['required'] && (userid.dirty || userid.touched)">
+          User ID is Required
+        </div>
+        <div class="form-text text-danger" *ngIf="userid.errors?.['pattern'] && (userid.dirty || userid.touched)">
+          User ID should start with an Alphabet
+        </div>
+        <div class="form-text text-danger" *ngIf="userid.errors?.['minlength'] && (userid.dirty || userid.touched)">
+          User ID is too short
+        </div>
       </div>
 </div>
 <div class="row mb-3">
     <div class="col">
-        <label for="otp" class="form-label">Enter OTP</label>
+        <label for="otpm1f" class="form-label">Enter OTP</label>
       </div>
       <div class="col text-center pt-1">-</div>
       <div class="col ">
-        <input type="text" id="otp" class="form-control border-dark border-2" formControlName="otp">
+        <input type="text" id="otpm1f" class="form-control border-dark border-2" formControlName="otpm1f">
+        <div class="form-text text-danger" *ngIf="otpm1f.errors?.['required'] && (otpm1f.dirty || otpm1f.touched)">
+          OTP is Required
+        </div>
+        <div class="form-text text-danger" *ngIf="otpm1f.errors?.['pattern'] && (otpm1f.dirty || otpm1f.touched)">
+          OTP should contain only Digits
+        </div>
+        <div class="form-text text-danger" *ngIf="otpm1f.errors?.['minlength'] || otpm1f.errors?.['maxlength'] && (otpm1f.dirty || otpm1f.touched)">
+          6 Digit OTP is Required
+        </div>
       </div>
 </div>
 <div class="row">
   <div class="col">
     <div class="d-grid">
-      <button type="submit" class="btn btn-outline-dark border-dark border-2" routerLink="/set-new-password">Proceed</button>
+      <button type="submit" [disabled]="forgotpasswordForm.invalid" class="btn btn-outline-dark border-dark border-2" routerLink="/set-new-password">Proceed</button>
     </div>
   </div>
   <div class="col">
