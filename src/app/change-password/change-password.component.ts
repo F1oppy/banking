@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-change-password',
@@ -10,7 +11,7 @@ export class ChangePasswordComponent implements OnInit {
 
   changePass: string = 'none';
   changePin: string = 'none';
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -23,9 +24,11 @@ export class ChangePasswordComponent implements OnInit {
   changepasswordSubmitted(){
     if((this.newpassword.value == this.confirmnewpassword.value) && (this.newtransactionpin.value == this.confirmnewtransactionpin.value)){
       console.log(this.changepasswordForm.value);
+      this.router.navigate(['login']);
     }
     else{
-      this.changePass='inline'
+      this.changePass='inline',
+      this.changePin='inline'
     }
 
   }

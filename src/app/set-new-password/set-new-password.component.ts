@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-set-new-password',
@@ -9,7 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class SetNewPasswordComponent implements OnInit {
 
   repeatPass: string = 'none';
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -20,6 +21,7 @@ export class SetNewPasswordComponent implements OnInit {
   setnewpasswordSubmitted(){
     if(this.newpassword.value == this.confirmnewpassword.value){
       console.log(this.setnewpasswordForm.value);
+      this.router.navigate(['login']);
     }
     else{
       this.repeatPass='inline'
