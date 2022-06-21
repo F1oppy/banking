@@ -1,39 +1,97 @@
 <!DOCTYPE html>   
 <html><form>
-<head>   
-<title> Register for Internet Banking </title>  
-<style>
-    label{
-        font-family:verdana;
-        font-size:20px;
-    }
-    button{
-        font-family:verdana;
-        font-size:18px;
-    }
-    body{
-        text-align: center;
-    }
-    form{
-        display: inline-block;
-    }
-</style>  
+<head>
 </head>    
 <body> 
-    <h1 style="font-family:verdana"> Register for Internet Banking </h1><br><br><br><br>
-    <form>
-        <label>Account Number : </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
-        <input type="number" placeholder="Enter Account Number" name="accountnumber" required><br><br>
-        <label>Set Login Password : </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="password" placeholder="Enter Login Password" name="setloginpassword" required><br><br>
-        <label>Confirm Login Password : </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="password" placeholder="Re-enter Login Password" name="confirmloginpassword" required><br><br>
-        <label>Set Transaction Password : </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="password" placeholder="Enter Transaction Password" name="settransactionpassword" required><br><br>
-        <label>Confirm Transaction Password : </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="password" placeholder="Re-enter Transaction Password" name="confirmtransactionpassword" required><br><br><br><br>
-        <button type="submit" routerLink="/login">Submit</button>
-    </form>
-</body>
-</form>
-</html>
+    <form [formGroup]="registerForInternetBanking" (ngSubmit)="registerSubmitted()" class="border p-3 rounded-3">
+        <div class="row g-0"> 
+            <div class="col text-center p-2 mb-3 bg-light">
+              <span class="fs-3"> Register for Internet Banking </span>
+            </div>
+        <div class="row">
+            <div class="col mb-3">
+              <label for="newpassword" class="form-label">Account Number -</label><br>
+              </div>
+              <div class="col mb-3">
+                <input type="text" id="accno" class="form-control border-dark border-2" formControlName="accno">
+                <div class="form-text text-danger" *ngIf="accno.errors?.['required'] && (accno.dirty || accno.touched)">
+                  Account Number is Required
+                </div>
+                <div class="form-text text-danger" *ngIf="accno.errors?.['pattern'] && (accno.dirty || accno.touched)">
+                  Account Number should contain only Digits
+                </div>
+                <div class="form-text text-danger" *ngIf="accno.errors?.['minlength'] && (accno.dirty || accno.touched)">
+                  10 Digit Account Number is Required
+                </div>
+                <div class="form-text text-danger" *ngIf="accno.errors?.['maxlength'] && (accno.dirty || accno.touched)">
+                  10 Digit Account Number is Required
+                </div>
+              </div>
+        </div>
+      
+        <div class="row">
+            <div class="col mb-3">
+              <label for="newpassword" class="form-label">Login Password -</label><br>
+            </div>
+            <div class="col mb-3">
+              <input type="password" id="newpassword" formControlName="newpassword"><br>
+              <div class="form-text text-danger" *ngIf="newpassword.errors?.['required'] && (newpassword.dirty || newpassword.touched)">
+                Password is required
+              </div>
+              <div class="form-text text-danger" *ngIf="newpassword.errors?.['minlength'] || newpassword.errors?.['maxlength'] && (newpassword.dirty || newpassword.touched)">
+                Minimum 8 charecters password is required
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+              <label for="newpassword" class="form-label">Confirm Login Password -</label><br>
+            </div>
+            <div class="col mb-3">
+              <input type="password" id="confirmpassword" formControlName="confirmpassword"><br>
+              <div class="form-text text-danger" *ngIf="confirmpassword.errors?.['required'] && (confirmpassword.dirty || confirmpassword.touched)">
+                Password is required
+              </div>
+              <div class="form-text text-danger" *ngIf="confirmpassword.errors?.['minlength'] || confirmpassword.errors?.['maxlength'] && (confirmpassword.dirty || confirmpassword.touched)">
+                Minimum 8 charecters password is required
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mb-3">
+              <label for="newtransactionpin" class="form-label">Transaction Pin -</label><br>
+            </div>
+            <div class="col mb-3">
+              <input type="password" id="newtransactionpin" formControlName="newtransactionpin"><br>
+              <div class="form-text text-danger" *ngIf="newtransactionpin.errors?.['required'] && (newtransactionpin.dirty || newtransactionpin.touched)">
+                Transaction Password is Required
+              </div>
+              <div class="form-text text-danger" *ngIf="newtransactionpin.errors?.['pattern'] && (newtransactionpin.dirty || newtransactionpin.touched)">
+                Transaction Password should contain only Digits
+              </div>
+              <div class="form-text text-danger" *ngIf="newtransactionpin.errors?.['minlength'] || newtransactionpin.errors?.['maxlength'] && (newtransactionpin.dirty || newtransactionpin.touched)">
+                6 Digit Transaction Password is Required
+              </div>
+            </div>
+          
+
+          <div class="row">
+            <div class="col mb-3">
+              <label for="confirmnewtransactionpin" class="form-label">Confirm Transaction Pin -</label><br>
+            </div>
+            <div class="col mb-3">
+              <input type="password" id="confirmnewtransactionpin" formControlName="confirmnewtransactionpin"><br><br>
+              <div class="form-text text-danger" [ngStyle]="{'display': changePin}">
+                Entered different Transaction Password
+              </div>
+            </div>
+          </div>
+      
+          <div class="row">
+            <div class="col-6 offset-3">
+              <div class="d-grid">
+              <button type="submit" [disabled]="registerForInternetBanking.invalid"  class="btn btn-primary">Submit</button>
+        
+              </div>
+            </div>
+          </div>
