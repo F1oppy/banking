@@ -15,8 +15,8 @@ export class RegisterForInternetBankingComponent implements OnInit {
 
   constructor(private router: Router, private http: HttpClient) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit() {
+}
 
   registerForInternetBanking= new FormGroup({
     accno: new FormControl("",[Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(10), Validators.maxLength(10)]),
@@ -30,12 +30,17 @@ export class RegisterForInternetBankingComponent implements OnInit {
   registerSubmitted(){
     if((this.newpassword.value == this.confirmpassword.value) && (this.newtransactionpin.value == this.confirmnewtransactionpin.value)){
       console.log(this.registerForInternetBanking.value);
-      this.http.post<any>("http://localhost:8080/register",this.registerForInternetBanking.value)
+      this.http.post<any>("//localhost:8080/register",{
+        "userid": this.registerForInternetBanking.value.accno,
+        "newpassword": this.registerForInternetBanking.value.newpassword,
+        "newtransactionpin": this.registerForInternetBanking.value.newtransactionpin,
+        "accno": this.registerForInternetBanking.value.accno
+    })
       .subscribe(res=>{
         alert("Registered Successfully");
         this.registerForInternetBanking.reset();
         this.router.navigate(['login']);
-      })
+      },err=>{alert("Error Occured");})
     }
     else{
       this.changePass='inline',
