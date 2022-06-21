@@ -22,6 +22,7 @@ import { FpComponent } from './fp/fp.component';
 import { ForgotuseridComponent } from './forgotuserid/forgotuserid.component';
 import { AccountLockedPageComponent } from './account-locked-page/account-locked-page.component';
 import { AccountStatementComponent } from './account-statement/account-statement.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AccountStatementComponent } from './account-statement/account-statement
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

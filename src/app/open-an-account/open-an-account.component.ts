@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-open-an-account',
@@ -8,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class OpenAnAccountComponent implements OnInit {
   accountType = "open-an-account";
-  constructor() { }
+  constructor(private formBuilder : FormBuilder, private http : HttpClient){ }
 
   ngOnInit(): void {
   }
