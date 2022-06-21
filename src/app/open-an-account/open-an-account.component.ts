@@ -9,8 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./open-an-account.component.css']
 })
 export class OpenAnAccountComponent implements OnInit {
+
   accountType = "open-an-account";
-  constructor(private formBuilder : FormBuilder, private http : HttpClient, private router:Router){ }
+
+  constructor(private http : HttpClient, private router:Router){ }
 
   ngOnInit(): void {
   }
@@ -38,13 +40,31 @@ export class OpenAnAccountComponent implements OnInit {
   });
 
   openAnAccountSubmitted(){
-    this.http.post<any>("http://localhost:8080/openAnAcct", this.openAnAccount.value)
+    this.http.post<any>("http://localhost:8080/openAnAcct",{
+      "firstName":this.openAnAccount.value.firstName,
+      "lastName":this.openAnAccount.value.lastName,
+      "fatherName":this.openAnAccount.value.fatherName,
+      "mobileNumber":this.openAnAccount.value.mobileNumber,
+      "emailId":this.openAnAccount.value.emailId,
+      "aadharNumber":this.openAnAccount.value.aadharNumber,
+      "dOB":this.openAnAccount.value.dOB,
+      "occupationType":this.openAnAccount.value.occupationType,
+      "sourceOfIncome":this.openAnAccount.value.sourceOfIncome,
+      "grossAnnualIncome":this.openAnAccount.value.grossAnnualIncome,
+      "addressLine1":this.openAnAccount.value.addressLine1,
+      "addressLine2":this.openAnAccount.value.addressLine2,
+      "city":this.openAnAccount.value.city,
+      "postalCode":this.openAnAccount.value.postalCode,
+      "country":this.openAnAccount.value.country,
+      "landmark":this.openAnAccount.value.landmark,
+      "debitCard":this.openAnAccount.value.debitCard,
+      "netBanking":this.openAnAccount.value.netBanking,
+      "termsConditions":this.openAnAccount.value.termsConditions
+    })
     .subscribe(res=>{
       alert("Register Successful");
       this.openAnAccount.reset();
       this.router.navigate(['login'])
-    },error=>{
-      alert("Something went wrong!")
     })
   }
 
