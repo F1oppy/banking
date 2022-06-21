@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-open-an-account',
@@ -9,7 +10,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class OpenAnAccountComponent implements OnInit {
   accountType = "open-an-account";
-  constructor(private formBuilder : FormBuilder, private http : HttpClient){ }
+  constructor(private formBuilder : FormBuilder, private http : HttpClient, private router:Router){ }
 
   ngOnInit(): void {
   }
@@ -37,7 +38,14 @@ export class OpenAnAccountComponent implements OnInit {
   });
 
   openAnAccountSubmitted(){
-    console.log(this.openAnAccount.value);
+    this.http.post<any>("http://localhost:8080/openAnAcct", this.openAnAccount.value)
+    .subscribe(res=>{
+      alert("Register Successful");
+      this.openAnAccount.reset();
+      this.router.navigate(['login'])
+    },error=>{
+      alert("Something went wrong!")
+    })
   }
 
   get firstName(): FormControl{
