@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-for-internet-banking',
@@ -11,7 +13,7 @@ export class RegisterForInternetBankingComponent implements OnInit {
   changePass: string = 'none';
   changePin: string = 'none';
 
-  constructor() { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -28,9 +30,16 @@ export class RegisterForInternetBankingComponent implements OnInit {
   registerSubmitted(){
     if((this.newpassword.value == this.confirmpassword.value) && (this.newtransactionpin.value == this.confirmnewtransactionpin.value)){
       console.log(this.registerForInternetBanking.value);
+      this.http.post<any>("http://localhost:8080/register",this.registerForInternetBanking.value)
+      .subscribe(res=>{
+        alert("Registered Successfully");
+        this.registerForInternetBanking.reset();
+        this.router.navigate(['login']);
+      })
     }
     else{
-      this.changePass='inline'
+      this.changePass='inline',
+      this.changePin='inline'
     }
     //   this.repeatAccount = 'none'
     // }else{

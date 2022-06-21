@@ -49,11 +49,8 @@
             </div>
             <div class="col mb-3">
               <input type="password" id="confirmpassword" formControlName="confirmpassword"><br>
-              <div class="form-text text-danger" *ngIf="confirmpassword.errors?.['required'] && (confirmpassword.dirty || confirmpassword.touched)">
-                Password is required
-              </div>
-              <div class="form-text text-danger" *ngIf="confirmpassword.errors?.['minlength'] || confirmpassword.errors?.['maxlength'] && (confirmpassword.dirty || confirmpassword.touched)">
-                Minimum 8 charecters password is required
+              <div class="form-text text-danger" [ngStyle]="{'display': changePass}">
+                Password should be same as login pasword
               </div>
             </div>
         </div>
