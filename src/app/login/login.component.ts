@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
   }
 
   Login= new FormGroup({
-    userid: new FormControl("",[Validators.required, Validators.minLength(2), Validators.pattern("[a-zA-Z].*")]),
-    newpassword: new FormControl("",[Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(8), Validators.maxLength(10)]),
+    userid: new FormControl("",[Validators.required, Validators.minLength(2)]),
+    newpassword: new FormControl("",[Validators.required, Validators.minLength(8), Validators.maxLength(10)]),
   });
 
   loginSubmitted(){
