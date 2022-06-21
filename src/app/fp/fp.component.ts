@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fp',
@@ -8,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class FpComponent implements OnInit {
 
-  constructor() { }
+  constructor( private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +19,7 @@ export class FpComponent implements OnInit {
   });
   forgotpasswordSubmitted(){
     console.log(this.forgotpasswordForm.value);
+    this.router.navigate(['set-new-password']);
   }
   get userid(): FormControl{
     return this.forgotpasswordForm.get("userid") as FormControl;
