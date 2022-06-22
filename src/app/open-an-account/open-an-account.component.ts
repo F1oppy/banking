@@ -45,6 +45,7 @@ export class OpenAnAccountComponent implements OnInit {
       "lastName":this.openAnAccount.value.lastName,
       "fatherName":this.openAnAccount.value.fatherName,
       "mobileNumber":this.openAnAccount.value.mobileNumber,
+      "userid":this.openAnAccount.value.mobileNumber,
       "emailId":this.openAnAccount.value.emailId,
       "aadharNumber":this.openAnAccount.value.aadharNumber,
       "dOB":this.openAnAccount.value.dOB,
@@ -59,10 +60,10 @@ export class OpenAnAccountComponent implements OnInit {
       "landmark":this.openAnAccount.value.landmark,
       "debitCard":this.openAnAccount.value.debitCard,
       "netBanking":this.openAnAccount.value.netBanking,
-      "termsConditions":this.openAnAccount.value.termsConditions
+      "termsConditions":this.openAnAccount.value.termsConditions,
     })
     .subscribe(res=>{
-      alert("Register Successful");
+      alert("Account created Successfully");
       this.openAnAccount.reset();
       this.router.navigate(['register-for-internet-banking'])
     })
