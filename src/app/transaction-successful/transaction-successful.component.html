@@ -2,7 +2,7 @@
 <html>
 <body>
   <link rel="stylesheet" href="transaction-successful.component.css">
-<form  class="border p-3 rounded-3">
+<form  class="border border-dark p-3 rounded-3">
   <div class="row g-0">
     <div class="col text-center p-2 mb-3 bg-light">
       <span class=" fs-3">Transfer</span>
@@ -10,8 +10,9 @@
   </div>
   <div class="row">
   <div class="col"> 
-    <output>Mode - </output><br><br>
+    <output>Mode</output><br><br>
   </div>
+  <div class="col">-</div>
   <div class="col">
     <output>RTGS</output>
   </div>
@@ -19,8 +20,9 @@
 
 <div class="row" >
   <div class="col"> 
-    <output>Paid to Account - </output><br><br>
+    <output>Paid to Account</output><br><br>
   </div >
+  <div class="col">-</div>
   <div class="col">
     <output *ngFor="let user of users">{{user.receiver}}</output>
   </div>
@@ -28,8 +30,9 @@
 
 <div class="row">
   <div class="col"> 
-    <output>Amount - </output><br><br>
+    <output>Amount</output><br><br>
   </div>
+  <div class="col">-</div>
   <div class="col">
     <output *ngFor="let user of users">{{user.amount}}</output>
   </div>
@@ -37,8 +40,9 @@
 
 <div class="row">
   <div class="col"> 
-    <output>From Account - </output><br><br>
+    <output>From Account</output><br><br>
   </div>
+  <div class="col">-</div>
   <div class="col">
     <output *ngFor="let user of users">{{user.sender}}</output>
   </div>
@@ -46,19 +50,21 @@
 
 <div class="row">
   <div class="col"> 
-    <output>On - </output><br><br>
+    <output>On</output><br><br>
   </div>
+  <div class="col">-</div>
   <div class="col">
     <output>23/06/2022</output>
   </div>
-</div><br>
+</div>
 
 <div class="row">
   <div class="col"> 
     <output>Remarks - </output><br><br>
   </div>
+  <div class="col">-</div>
   <div class="col">
-    <output>School</output>
+    <output *ngFor="let user of users">{{user.remarks}}</output>
   </div>
 </div>
 
