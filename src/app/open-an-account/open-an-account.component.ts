@@ -64,7 +64,7 @@ export class OpenAnAccountComponent implements OnInit {
     .subscribe(res=>{
       alert("Register Successful");
       this.openAnAccount.reset();
-      this.router.navigate(['login'])
+      this.router.navigate(['register-for-internet-banking'])
     })
   }
 
