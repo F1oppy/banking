@@ -32,9 +32,6 @@
         <div class="form-text text-danger" *ngIf="receiver.errors?.['maxlength']&& (receiver.touched || receiver.dirty)">Account Number is Invalid</div>
         <div class="form-text text-danger" *ngIf="receiver.errors?.['pattern']&& (receiver.touched || receiver.dirty)">Account Number Must be only number</div><br><br>
       </div>
-      <div class="col btn-lg float-end">
-        <input class="btn btn-primary" routerLink="/add-payee" type="submit" value="Add New +">
-      </div>
     </div>
     
 
