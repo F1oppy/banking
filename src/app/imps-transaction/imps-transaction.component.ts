@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-imps-transaction',
@@ -9,7 +11,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 })
 export class IMPSTransactionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -25,6 +27,19 @@ export class IMPSTransactionComponent implements OnInit {
 
   impsSubmitted(){
     console.log(this.impsTransaction.value);
+    this.http.post<any>("http://localhost:8080/NEFTTransaction",{
+      "sender":this.impsTransaction.value.sender,
+      "receiver":this.impsTransaction.value.receiver,
+      "amount":this.impsTransaction.value.amount,
+      "transactionDate":this.impsTransaction.value.transactionDate,
+      "instructions":this.impsTransaction.value.instructions,
+      "remarks":this.impsTransaction.value.remarks,
+    })
+    .subscribe(res=>{
+      alert("Transaction Successful");
+      this.impsTransaction.reset();
+      this.router.navigate(['transaction-successful'])
+    })
   }
 
   get sender(): FormControl{

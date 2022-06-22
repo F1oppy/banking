@@ -13,7 +13,7 @@
       <label for="sender" class="form-label">From Account -</label><br><br>
     </div>
     <div class="col">
-      <input type="number" id="sender" formControlName="sender"><br><br>
+      <input type="text" id="sender" formControlName="sender"><br><br>
       <div class="form-text text-danger" *ngIf="sender.errors?.['required'] && (sender.dirty || sender.touched)">Field is Required</div>
       <div class="form-text text-danger" *ngIf="sender.errors?.['minlength']&& (sender.touched || sender.dirty)">Account Number is Invalid</div>
       <div class="form-text text-danger" *ngIf="sender.errors?.['maxlength']&& (sender.touched || sender.dirty)">Account Number is Invalid</div>
@@ -26,7 +26,7 @@
         <label for="receiver" class="form-label">To Account -</label><br><br>
       </div>
       <div class="col mb-3">
-        <input type="number" id="receiver" formControlName="receiver"><br><br>
+        <input type="text" id="receiver" formControlName="receiver"><br><br>
         <div class="form-text text-danger" *ngIf="receiver.errors?.['required'] && (receiver.dirty || receiver.touched)">Field is Required</div>
         <div class="form-text text-danger" *ngIf="receiver.errors?.['minlength']&& (receiver.touched || receiver.dirty)">Account Number is Invalid</div>
         <div class="form-text text-danger" *ngIf="receiver.errors?.['maxlength']&& (receiver.touched || receiver.dirty)">Account Number is Invalid</div>
@@ -42,7 +42,7 @@
         <label for="amount" class="form-label">Amount -</label><br>
       </div>
       <div class="col mb-3">
-        <input type="number" id="amount" formControlName="amount"><br><br>
+        <input type="text" id="amount" formControlName="amount"><br><br>
         <div class="form-text text-danger" *ngIf="amount.errors?.['required']&& amount.touched">
           Valid Amount is Required
         </div>
@@ -83,13 +83,7 @@
 
     <div class="row">
       <div class="col mb-3">
-        <input class="btn btn-primary" type="submit" value="Save">
-      </div>
-      <div class="col mb-3">
-        <input class="btn btn-primary" type="submit" value="Reset">
-      </div>
-      <div class="col mb-3">
-        <input class="btn btn-primary" type="submit" value="Save as Template">
+        <input class="btn btn-primary" type="button" routerLink="/dashboard" value="Back">
       </div>
       <div class="col mb-3">
         <input class="btn btn-primary" type="submit" value="Continue">

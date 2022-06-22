@@ -45,7 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     ForgotuseridComponent,
     AccountLockedPageComponent,
     AccountStatementComponent,
-    AccountStatementComponent
+    AccountStatementComponent,
   ],
   imports: [
     BrowserModule,

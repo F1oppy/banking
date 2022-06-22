@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
+import { TransactionServiceService } from '../transaction-service.service';
 @Component({
   selector: 'app-transaction-successful',
   templateUrl: './transaction-successful.component.html',
@@ -8,21 +9,14 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class TransactionSuccessfulComponent implements OnInit {
 
-  constructor() { }
+  users : any;
+  constructor(private userData:TransactionServiceService) { 
+    userData.users().subscribe((data)=>{
+      console.warn("data",data);
+      this.users=data
+    });
+  }
 
   ngOnInit(): void {
   }
-  transactionSuccessful= new FormGroup({
-    sender: new FormControl(""),
-    receiver: new FormControl(""),
-    amount: new FormControl(""),
-    date: new FormControl(""),
-    instructions: new FormControl(""),
-    remarks: new FormControl(""),
-  });
-
-  transactionSubmitted(){
-    console.log(this.transactionSuccessful.value);
-  }
-
 }

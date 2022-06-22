@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rtgs-transaction',
@@ -8,7 +10,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RTGSTransactionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -24,6 +26,19 @@ export class RTGSTransactionComponent implements OnInit {
 
   rtgsSubmitted(){
     console.log(this.rtgsTransaction.value);
+    this.http.post<any>("http://localhost:8080/NEFTTransaction",{
+      "sender":this.rtgsTransaction.value.sender,
+      "receiver":this.rtgsTransaction.value.receiver,
+      "amount":this.rtgsTransaction.value.amount,
+      "transactionDate":this.rtgsTransaction.value.transactionDate,
+      "instructions":this.rtgsTransaction.value.instructions,
+      "remarks":this.rtgsTransaction.value.remarks,
+    })
+    .subscribe(res=>{
+      alert("Transaction Successful");
+      this.rtgsTransaction.reset();
+      this.router.navigate(['transaction-successful'])
+    })
   }
 
   get sender(): FormControl{

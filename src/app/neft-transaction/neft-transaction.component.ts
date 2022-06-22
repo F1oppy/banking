@@ -1,6 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-neft-transaction',
   templateUrl: './neft-transaction.component.html',
@@ -8,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class NEFTTransactionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -17,12 +18,21 @@ export class NEFTTransactionComponent implements OnInit {
     receiver: new FormControl("",[Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(10)]),
     amount: new FormControl("",[Validators.required, Validators.pattern("[0-9]*"), Validators.minLength(10)]),
     transactionDate: new FormControl("",[Validators.required]),
-    instructions: new FormControl(""),
-    remarks: new FormControl(""),
   });
 
   neftSubmitted(){
     console.log(this.neftTransaction.value);
+    this.http.post<any>("http://localhost:8080/NEFTTransaction",{
+      "sender":this.neftTransaction.value.sender,
+      "receiver":this.neftTransaction.value.receiver,
+      "amount":this.neftTransaction.value.amount,
+      "transactionDate":this.neftTransaction.value.transactionDate,
+    })
+    .subscribe(res=>{
+      alert("Transaction Successful");
+      this.neftTransaction.reset();
+      this.router.navigate(['transaction-successful'])
+    })
   }
 
   get sender(): FormControl{
