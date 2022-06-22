@@ -45,7 +45,7 @@
           <label for="newpassword" class="form-label">Password -</label><br><br>
         </div>
         <div class="col">
-          <input type="text" id="newpassword" formControlName="newpassword">
+          <input type="password" id="newpassword" formControlName="newpassword">
           <div class="form-text text-danger" *ngIf="newpassword.errors?.['required'] && (newpassword.dirty || newpassword.touched)">Field is Required</div>
           <div class="form-text text-danger" *ngIf="newpassword.errors?.['minlength']&& (newpassword.touched || newpassword.dirty)">Password is too short</div>
       </div>

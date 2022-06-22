@@ -23,6 +23,7 @@ import { ForgotuseridComponent } from './forgotuserid/forgotuserid.component';
 import { AccountLockedPageComponent } from './account-locked-page/account-locked-page.component';
 import { AccountStatementComponent } from './account-statement/account-statement.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AccountDetailsComponent } from './account-details/account-details.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { HttpClientModule } from '@angular/common/http';
     AccountLockedPageComponent,
     AccountStatementComponent,
     AccountStatementComponent,
+    AccountDetailsComponent,
   ],
   imports: [
     BrowserModule,

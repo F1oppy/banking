@@ -16,10 +16,8 @@
             <div class="sidebar-heading text-center py-4 primary-text fs-4 fw-bold text-uppercase border-bottom"><i
                     class="me-2"></i>BANK ANARR</div>
             <div class="list-group list-group-flush my-3">
-                <a routerLink="/dashboard" class="list-group-item list-group-item-action bg-transparent second-text active"><i
-                        class="fas fa-tachometer-alt me-2"></i>Account Details</a>
-                <a routerLink="/dashboard" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-project-diagram me-2"></i>Account Summary</a>
+                <a routerLink="/account-details"class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                    class="fas fa-paperclip me-2"></i>Account Details</a>
                 <a class="nav-link dropdown-toggle second-text list-group-item list-group-item-action bg-transparent second-text fw-bold" href="#" id="navbarDropdown"
                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
                        <i class="fas fa-user me-2"></i>Funds Transfer
@@ -78,28 +76,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="container">
-                    <table class="table table-bordered table-striped">
-                      <thead>
-                      <tr>
-                        <th>Firstname</th>
-                        <th>Lastname</th>
-                        <th>Mobile Number</th>
-                        <th>emailId</th>
-                        <th>Aadhar Number</th>
-                      </tr>
-                      </thead>
-                      <tbody>
-                      <tr *ngFor="let user of users">
-                        <td><span>{{user.firstName}}</span></td>
-                        <td><span>{{user.lastName}}</span></td>
-                        <td><span>{{user.mobileNumber}}</span></td>
-                        <td><span>{{user.emailId}}</span></td>
-                        <td><span>{{user.aadharNumber}}</span></td>
-                      </tr>
-                      </tbody>
-                    </table>
-                  </div>
+                
             </div>
         </div>
     </div>

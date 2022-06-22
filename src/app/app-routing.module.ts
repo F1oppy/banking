@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AccountDetailsComponent } from './account-details/account-details.component';
 import { AccountLockedPageComponent } from './account-locked-page/account-locked-page.component';
 import { AccountStatementComponent } from './account-statement/account-statement.component';
 import { AccountComponent } from './account/account.component';
@@ -38,7 +39,8 @@ const routes: Routes = [
   {path: 'transaction-successful', component: TransactionSuccessfulComponent},
   {path: '',redirectTo: '/home', pathMatch: 'full'},
   {path: 'account-locked-page', component: AccountLockedPageComponent},
-  {path: 'account-statement', component: AccountStatementComponent}
+  {path: 'account-statement', component: AccountStatementComponent},
+  {path: 'account-details', component: AccountDetailsComponent}
 ];
 
 @NgModule({
